@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Product" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon-precomposed" href="favicon.png" />
+    <title></title>
+    <title><%= current_page.data.title || "The Middleman" %></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="JavaScript Cloud/Web Desktop Platform" />
+    <meta name="keywords" content="OS.js,Web Desktop,Cloud Desktop,Desktop,JavaScript OS,Operating System,JavaScript,OS,Window Manager" />
+    <link rel="author" href="https://plus.google.com/101576798387217383063" />
+    <link rel="publisher" href="https://plus.google.com/101576798387217383063" />
+
+    <!-- Facebook -->
+    <meta property="og:url" content="http://os.js.org/" />
+    <meta property="og:description" content="JavaScript Cloud/Web Desktop Platform" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OS.js" />
+    <meta property="og:site_name" content="OS.js" />
+    <meta property="og:see_also" content="http://osjsv2.0o.no/" />
+    <meta property="og:image" content="http://os.js.org/images/social-logo.png" />
+
+    <!-- Google+ -->
+    <meta itemprop="name" content="OS.js" />
+    <meta itemprop="description" content="JavaScript Cloud/Web Desktop Platform" />
+    <meta itemprop="image" content="http://os.js.org/images/social-logo.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="http://os.js.org/" />
+    <meta name="twitter:title" content="OS.js" />
+    <meta name="twitter:description" content="JavaScript Cloud/Web Desktop Platform" />
+
+    <!-- Redirect to new domain -->
+    <script type="text/javascript">
+      if ( window.location.hostname === 'andersevenrud.github.io' ) {
+        window.location = '//os.js.org' + window.location.pathname.replace(/\/OS\.js-v2/, '');
+      }
+    </script>
+
+    <%= stylesheet_link_tag "normalize", "home" %>
+    <%= javascript_include_tag  "home" %>
+  </head>
+  <body class="<%= page_classes %>">
+
+    <%= yield %>
+
+    <div id="fb-root"></div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-46087265-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: 'andersevenrud/OS.js-v2'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  </body>
+</html>
