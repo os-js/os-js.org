@@ -1,0 +1,66 @@
+---
+title: Tutorial - Extend Server API
+layout: doc
+---
+<h1>Tutorial: Extend Server API</h1>
+
+<p>You can add extensions to the server api almost like the <a href="extend-client-api.html">Client API</a> by using extensions, which is a form of package.
+
+<p><b>You can use this in combination with Client API Extensions</b></p>
+
+<p>
+  Just create a new package:
+</p>
+<ol>
+  <li>Create a new package with <b>grunt create-package:MyModule</b></li>
+  <li>Delete everything except package.json</li>
+  <li>Change package.json to look like example below</li>
+  <li>Add api extension, either PHP or Node. Examples below</li>
+  <li>Rebuild with <b>grunt packages config</b> (dist), or <b>grunt config</b> (dist-dev)</li>
+</ol>
+
+<h3>package.json</h3>
+<pre class="code">
+{
+  "className": "ExtensionMyModule",
+  "type": "extension",
+  "build": {
+    "copy" : [
+      "package.json",
+      "api.js",
+      "api.php"
+    ]
+  },
+  "sources": [
+  ]
+}
+</pre>
+
+<h3>Node: api.js</h3>
+<pre class="code">
+
+(function() {
+
+  exports.register = function(CONFIG, API) {
+    API.myMethodName = function(args, callback, request, response) {
+      callback(false, false);
+    };
+  };
+
+})();
+
+</pre>
+
+<h3>PHP: api.php</h3>
+
+<pre class="code">
+
+class MyModuleAPI {
+  public static function myMethodName(Array $arguments) {
+    return Array(false, false);
+  }
+}
+
+API::AddHandler('myMethodName', Array('MyModuleAPI', 'myMethodName'));
+
+</pre>

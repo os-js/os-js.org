@@ -6,7 +6,7 @@ This is the [middleman](https://middlemanapp.com/) static site sources for OS.js
 
 ## Building
 
-`bundle exec middleman build`
+`make`
 
 ## Contributing
 

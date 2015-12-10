@@ -1,52 +1,67 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/Product" lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="apple-touch-icon-precomposed" href="favicon.png" />
-    <title></title>
     <title><%= current_page.data.title || "OS.js" %></title>
-
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="JavaScript Cloud/Web Desktop Platform" />
-    <meta name="keywords" content="OS.js,Web Desktop,Cloud Desktop,Desktop,JavaScript OS,Operating System,JavaScript,OS,Window Manager" />
+    <meta name="description" content="OS.js -- <%= current_page.data.title || "OS.js" %>" />
+    <meta name="keywords" content="OS.js,Documentation,Client,Server,API,Tutorial,Tutorials,Manual,Manuals" />
+    <link rel="stylesheet" type="text/css" href="/doc/main.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
     <link rel="author" href="https://plus.google.com/101576798387217383063" />
     <link rel="publisher" href="https://plus.google.com/101576798387217383063" />
-
-    <!-- Facebook -->
-    <meta property="og:url" content="http://os.js.org/" />
-    <meta property="og:description" content="JavaScript Cloud/Web Desktop Platform" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="OS.js" />
-    <meta property="og:site_name" content="OS.js" />
-    <meta property="og:see_also" content="http://osjsv2.0o.no/" />
-    <meta property="og:image" content="http://os.js.org/images/social-logo.png" />
-
-    <!-- Google+ -->
-    <meta itemprop="name" content="OS.js" />
-    <meta itemprop="description" content="JavaScript Cloud/Web Desktop Platform" />
-    <meta itemprop="image" content="http://os.js.org/images/social-logo.png" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="http://os.js.org/" />
-    <meta name="twitter:title" content="OS.js" />
-    <meta name="twitter:description" content="JavaScript Cloud/Web Desktop Platform" />
-
-    <!-- Redirect to new domain -->
     <script type="text/javascript">
       if ( window.location.hostname === 'andersevenrud.github.io' ) {
         window.location = '//os.js.org' + window.location.pathname.replace(/\/OS\.js-v2/, '');
       }
     </script>
 
-    <%= stylesheet_link_tag "normalize", "home" %>
-    <%= javascript_include_tag  "home" %>
+    <%= stylesheet_link_tag "normalize", "doc" %>
+    <%= javascript_include_tag  "doc" %>
   </head>
-  <body class="<%= page_classes %>">
+  <body>
+    <header>
+      <h1>%TITLE%</h1>
+      <ul>
+        <li><a href="/doc/">Index</a></li>
+        <li><a href="/doc/client/">Client API</a></li>
+        <li><a href="/doc/server/">Server API</a></li>
+        <li><a href="/doc/manuals/">Manuals</a></li>
+        <li><a href="/doc/tutorials/">Tutorials</a></li>
+      </ul>
+    </header>
 
-    <%= yield %>
+    <main>
+
+<%= yield %>
+
+      <div class="adddshere">
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:100%;height:250px"
+          data-ad-client="ca-pub-6145716264521226"
+          data-ad-slot="3789905596"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      </div>
+
+    </main>
+
+
+    <footer>
+      <div class="wrapper">
+        <img alt="" src="/images/logo-footer.png" />
+        <p>
+          OS.js &copy; Anders Evenrud 2011-2015
+          <br />
+          Hosting by Github
+        </p>
+      </div>
+    </footer>
 
     <div id="fb-root"></div>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

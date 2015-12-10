@@ -1,0 +1,24 @@
+---
+title: Tutorial - Using cURL API
+layout: doc
+---
+<h1>Tutorial: Using cURL API</h1>
+
+<p>You can do HTTP calls using cURL with the internal API.</p>
+
+<p>All the parameters are documented in the <a href="/doc/server/">Server API</a></p>
+
+<h3>Example code</h3>
+
+<pre class="code">
+
+API.curl({
+  body: {
+    url: 'http://your-url-here',
+    method: 'GET'
+  }
+}, function(error, response) {
+  console.log(response.body); // What you get back
+});
+
+</pre>
