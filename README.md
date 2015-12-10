@@ -4,6 +4,14 @@ This is the [middleman](https://middlemanapp.com/) static site sources for OS.js
 
 [Official Homepage Link](http://os.js.org/)
 
+## Installation
+
+```
+ln -sf /path/to/osjs OSjs
+gem install middleman
+npm install
+```
+
 ## Building
 
 `make`

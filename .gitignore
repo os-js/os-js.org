@@ -1,0 +1,6 @@
+OSjs
+*.swp
+*.swo
+node_modules
+source/doc/client/srcclientjavascript*
+source/_api_*
