@@ -36,31 +36,10 @@ grunt config # rebuild config files
 
 <h1>Building OS.js</h1>
 
-OS.js has two build directories.
+OS.js has two build directories. More information is located in the <a href="/doc/manuals/man-development.html">development environment documentation</a>.
 
-<h2>dist</h1>
+To build all changes, simply run:
 
-<p>
-  This is the production build of OS.js. All files have been compiled into single files (and can be compressed) to increase loading speed. This will however make it harder to debug.
-</p>
-
-<p>
-  To build simply do:
-</p>
-<pre>grunt</pre>
-<p>
-  Or alternatively:
-</p>
-<pre>grunt dist</pre>
-
-<h2>dist-dev</h1>
-
-<p>
-  This is what you should use when developing or testing changes. It will load all files directly from source (with exception of config and theme files).
-</p>
-
-<p>
-  This command is a shortcut to perform all tasks that dist-dev requires:
-</p>
-
-<pre>grunt dist-dev</pre>
+<pre class="code">
+grunt
+</pre>
