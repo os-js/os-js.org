@@ -5,41 +5,109 @@ layout: doc
 <h1>Configuring and building</h1>
 
 <p>
-  You can find all the configuration files in <b>src/conf</b> directory.
-</p>
-<p>
-  The files are loaded in alphabetical order (which is why they are prefixed with a number) and merged together into one final map.
-</p>
-<p>
-  It is highly encouraged that you write your own files instead of modifying the provided ones (because they may be affected by updates).
-</p>
-<p>
-  I provide an <a href="https://raw.githubusercontent.com/andersevenrud/OS.js-v2/master/src/templates/conf/900-custom.json">example</a> in the repository.
+  OS.js uses Grunt for building and configuring. Look at the <a href="/doc/manuals/man-build-grunt.html">configuration manual page</a> for more information.
 </p>
 
 <p>
-  If you make any changes, issue this command to rebuild configuration files (not needed if you run "grunt watch"):
+  For a simplified guide on how to install OS.js <a href="/doc/manuals/man-install.html">look here</a>.
 </p>
-<pre>grunt config</pre>
 
-<h1>Setting\Getting configuration via Grunt</h1>
 <p>
-  You can also set (and get) configration via Grunt.
+  For building other types of distributions (like Vagrant, Docker and NW), look at the <a href="https://github.com/andersevenrud/OS.js-v2/blob/master/INSTALL.md#containers-and-virtual-machines">repository INSALL file</a>.
 </p>
-<pre class="code">
+
+<h2>Build Directories</h2>
+
+<div class="indent">
+
+  <p>
+    OS.js has two build directories:
+  </p>
+
+  <h3>dist</h3>
+  <p>
+    This is the "production" build. All files are concatenated (and optionally compressed) making it suitable for use in deployment.
+  </p>
+
+  <h3>dist-dev</h3>
+  <p>
+    This is the development build. It is not a "build" per-se, but rather symlinks to the source-code.
+    Using this means you don't have to run any tasks to make your changes take effect (with some exceptions, like themes).
+  </p>
+  <p>
+    It's <b>highly recommended</b> you use this when making changes to OS.js because it has full debugging (logging to browser console) enabled.
+  </p>
+
+</div>
+
+<h2>Building</h2>
+
+<div class="indent">
+  <p>
+    To build, simply run:
+  </p>
+  <pre class="code">
+
+grunt
+
+  </pre>
+
+  <h3>Building spesific components</h3>
+  <p>
+    Look at the <a href="/doc/manuals/man-build-grunt.html">configuration manual page</a> for more information about building spesific components.
+  </p>
+
+  <p>
+    You can use <pre>grunt dist</pre> or <pre>grunt dist-dev</pre> as shortcuts to run any needed tasks for the two build directories.
+  </p>
+
+  <p>
+    <i>Tip for developers:</i> Run <pre>grunt watch</pre> in the background to automatically make grunt run the appropriate tasks for you when you make any changes.
+  </p>
+
+</div>
+
+<h2>Configuring</h2>
+
+<div class="indent">
+
+  <h3>Via Grunt</h3>
+  <p>
+    See the <a href="/doc/manuals/man-build-grunt.html">configuration manual page</a> for full instructions.
+  </p>
+  <pre class="code">
+
+# Basic examples
+
 grunt config:get:client.Connection.RootURI
 
 grunt config:set:client.Connection.RootRUI:/custom/path
 
 grunt config # rebuild config files
-</pre>
 
-<h1>Building OS.js</h1>
+  </pre>
 
-OS.js has two build directories. More information is located in the <a href="/doc/manuals/man-development.html">development environment documentation</a>.
 
-To build all changes, simply run:
+  <h3>Manually</h3>
 
-<pre class="code">
-grunt
-</pre>
+  <p>
+    You can find all the configuration files in <b>src/conf</b> directory.
+  </p>
+  <p>
+    The files are loaded in alphabetical order (which is why they are prefixed with a number) and merged together into one final map.
+  </p>
+  <p>
+    It is highly encouraged that you write your own files instead of modifying the provided ones (because they may be affected by updates).
+  </p>
+  <p>
+    I provide an <a href="https://raw.githubusercontent.com/andersevenrud/OS.js-v2/master/src/templates/conf/900-custom.json">example</a> in the repository.
+  </p>
+  <p>
+    If you make any changes, issue this command to rebuild configuration files (not needed if you run "grunt watch"):
+  </p>
+  <pre class="code">
+
+grunt config
+
+  </pre>
+</div>
