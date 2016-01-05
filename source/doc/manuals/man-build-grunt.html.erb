@@ -9,150 +9,159 @@ layout: doc
 
 <h2>Code Quality Tasks</h2>
 
-<h3>jshint</h3>
-<p>
-  Checks the JavaScript code for errors.
-</p>
+<div class="indent">
+  <h3>jshint</h3>
+  <p>
+    Checks the JavaScript code for errors.
+  </p>
 
-<h3>jscs</h3>
-<p>
-  Checks if the JavaScript code follows the <a href="https://github.com/andersevenrud/OS.js-v2/wiki/Style-guide">style guidelines</a>.
-</p>
+  <h3>jscs</h3>
+  <p>
+    Checks if the JavaScript code follows the <a href="https://github.com/andersevenrud/OS.js-v2/wiki/Style-guide">style guidelines</a>.
+  </p>
 
-<h3>mochaTest</h3>
-<p>
-  Runs server-side tests with <a href="https://mochajs.org/">mocha</a>.
-</p>
+  <h3>mochaTest</h3>
+  <p>
+    Runs server-side tests with <a href="https://mochajs.org/">mocha</a>.
+  </p>
+</div>
 
 <h2>Developer Tasks</h2>
 
-<h3>test</h3>
-<p>
-  Runs all the tasks defined above in "Code Quality Tasks"
-</p>
+<div class="indent">
+  <h3>test</h3>
+  <p>
+    Runs all the tasks defined above in "Code Quality Tasks"
+  </p>
 
-<h3>watch</h3>
-<p>
-  Makes Grunt watch for changes in the source-code (modifications, additions and removals) and runs the appropriate task for you. Very helpful when you're making changes.
-</p>
+  <h3>watch</h3>
+  <p>
+    Makes Grunt watch for changes in the source-code (modifications, additions and removals) and runs the appropriate task for you. Very helpful when you're making changes.
+  </p>
 
-<h3>create-package</h3>
-<p>
-  Create a new package.
-</p>
-<pre class="code">
+  <h3>create-package</h3>
+  <p>
+    Create a new package.
+  </p>
+  <pre class="code">
 
-# Create normal application
-grunt create-package:PACKAGENAME
-grunt create-package:REPONAME/PACKAGENAME
+  # Create normal application
+  grunt create-package:PACKAGENAME
+  grunt create-package:REPONAME/PACKAGENAME
 
-# Create iframe application
-grunt create-package:PACKAGENAME:iframe
+  # Create iframe application
+  grunt create-package:PACKAGENAME:iframe
 
-# Create a service
-grunt create-package:PACKAGENAME:service
+  # Create a service
+  grunt create-package:PACKAGENAME:service
 
-# Create a extension
-grunt create-package:PACKAGENAME:extension
+  # Create a extension
+  grunt create-package:PACKAGENAME:extension
 
-</pre>
+  </pre>
 
-<h3>dist-index</h3>
-<p>
-  Regenerate dist/index.html
-</p>
+  <h3>dist-index</h3>
+  <p>
+    Regenerate dist/index.html
+  </p>
 
-<h3>dist-dev-index</h3>
-<p>
-  Regenerate dist-dev/index.html
-</p>
+  <h3>dist-dev-index</h3>
+  <p>
+    Regenerate dist-dev/index.html
+  </p>
+</div>
 
 <h2>Build Tasks</h2>
 
-<h3>config</h3>
-<p>
-  Build and modify config files for server and client.
-</p>
-<pre class="code">
+<div class="indent">
+  <h3>config</h3>
+  <p>
+    Build and modify config files for server and client.
+  </p>
+  <pre class="code">
 
-# Set a config value
-grunt config:set:PATH:VALUE
-grunt config:set:client.Locale:en_EN
+  # Set a config value
+  grunt config:set:PATH:VALUE
+  grunt config:set:client.Locale:en_EN
 
-# Get a config value
-grunt config:get:PATH
-grunt config:get:client.Locale
+  # Get a config value
+  grunt config:get:PATH
+  grunt config:get:client.Locale
 
-# Get entire config
-grunt config:get
+  # Get entire config
+  grunt config:get
 
-# Rebuild config files
-grunt config
+  # Rebuild config files
+  grunt config
 
-</pre>
+  </pre>
 
-<h3>packages</h3>
-<p>
-  Builds all packages in src/packages to dist/
-</p>
-<pre class="code">
+  <h3>packages</h3>
+  <p>
+    Builds all packages in src/packages to dist/
+  </p>
+  <pre class="code">
 
-# Builds all packages
-grunt packages
+  # Builds all packages
+  grunt packages
 
-# Builds spesific package
-grunt packages:REPONAME/PACKAGENAME
+  # Builds spesific package
+  grunt packages:REPONAME/PACKAGENAME
 
-# Enables given package
-grunt packages:enable:REPONAME/PACKAGENAME
+  # Enables given package
+  grunt packages:enable:REPONAME/PACKAGENAME
 
-# Disables given package
-grunt packages:disable:REPONAME/PACKAGENAME
+  # Disables given package
+  grunt packages:disable:REPONAME/PACKAGENAME
 
-</pre>
+  </pre>
 
-<h3>manifest</h3>
-<p>
-  Builds the manifest file from package.json in src/packages
-</p>
+  <h3>manifest</h3>
+  <p>
+    Builds the manifest file from package.json in src/packages
+  </p>
 
-<h3>core</h3>
-<p>
-  Builds all files in src/client/javascript to dist/
-</p>
+  <h3>core</h3>
+  <p>
+    Builds all files in src/client/javascript to dist/
+  </p>
 
-<h3>themes</h3>
-<p>
-  Builds all files in src/client/javascript to dist/
-</p>
+  <h3>themes</h3>
+  <p>
+    Builds all files in src/client/javascript to dist/
+  </p>
+</div>
 
 <h2>Misc build Tasks</h2>
 
-<h3>standalone</h3>
-<p>
-  Build a standalone version of dist/ into .standalone.
-</p>
-<pre class="code">
+<div class="indent">
+  <h3>standalone</h3>
+  <p>
+    Build a standalone version of dist/ into .standalone.
+  </p>
+  <pre class="code">
 
-# Normal
-grunt standalone
+  # Normal
+  grunt standalone
 
-# For NW.js
-grunt standalone:nw
+  # For NW.js
+  grunt standalone:nw
 
-</pre>
+  </pre>
 
-<h3>nw</h3>
-<p>
-  Builds NW.js deployables (OSX, Linux and Windows) into .nw
-</p>
+  <h3>nw</h3>
+  <p>
+    Builds NW.js deployables (OSX, Linux and Windows) into .nw
+  </p>
 
-<h3>dist</h3>
-<p>
-  Shortcut for running all tasks required for dist/ to run
-</p>
+  <h3>dist</h3>
+  <p>
+    Shortcut for running all tasks required for dist/ to run
+  </p>
 
-<h3>dist-dev</h3>
-<p>
-  Shortcut for running all tasks required for dist-dev/ to run
-</p>
+  <h3>dist-dev</h3>
+  <p>
+    Shortcut for running all tasks required for dist-dev/ to run
+  </p>
+
+</div>
