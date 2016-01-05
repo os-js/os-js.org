@@ -91,6 +91,11 @@ layout: doc
   # Get entire config
   grunt config:get
 
+  # Add a preload (custom library or stylesheet etc)
+  grunt preload:NAME:PATH:TYPE
+  grunt preload:mylib:/vendor/mylib.js:javascript
+  grunt preload:mystyle:/vendor/mystyle.css:stylesheet
+
   # Rebuild config files
   grunt config
 
