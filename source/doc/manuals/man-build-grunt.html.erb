@@ -80,24 +80,28 @@ layout: doc
   </p>
   <pre class="code">
 
-  # Set a config value
-  grunt config:set:PATH:VALUE
-  grunt config:set:client.Locale:en_EN
+# Set a config value
+grunt config:set:PATH:VALUE
+grunt config:set:client.Locale:en_EN
 
-  # Get a config value
-  grunt config:get:PATH
-  grunt config:get:client.Locale
+# Get a config value
+grunt config:get:PATH
+grunt config:get:client.Locale
 
-  # Get entire config
-  grunt config:get
+# Get entire config
+grunt config:get
 
-  # Add a preload (custom library or stylesheet etc)
-  grunt preload:NAME:PATH:TYPE
-  grunt preload:mylib:/vendor/mylib.js:javascript
-  grunt preload:mystyle:/vendor/mystyle.css:stylesheet
+# Add a preload (custom library or stylesheet etc)
+grunt preload:NAME:PATH:TYPE
+grunt preload:mylib:/vendor/mylib.js:javascript
+grunt preload:mystyle:/vendor/mystyle.css:stylesheet
 
-  # Rebuild config files
-  grunt config
+# Add or remove repositories from list
+grunt config:add-repository:NAME
+grunt config:remove-repository:NAME
+
+# Rebuild config files
+grunt config
 
   </pre>
 
@@ -107,17 +111,17 @@ layout: doc
   </p>
   <pre class="code">
 
-  # Builds all packages
-  grunt packages
+# Builds all packages
+grunt packages
 
-  # Builds spesific package
-  grunt packages:REPONAME/PACKAGENAME
+# Builds spesific package
+grunt packages:REPONAME/PACKAGENAME
 
-  # Enables given package
-  grunt packages:enable:REPONAME/PACKAGENAME
+# Enables given package
+grunt packages:enable:REPONAME/PACKAGENAME
 
-  # Disables given package
-  grunt packages:disable:REPONAME/PACKAGENAME
+# Disables given package
+grunt packages:disable:REPONAME/PACKAGENAME
 
   </pre>
 
@@ -146,11 +150,11 @@ layout: doc
   </p>
   <pre class="code">
 
-  # Normal
-  grunt standalone
+# Normal
+grunt standalone
 
-  # For NW.js
-  grunt standalone:nw
+# For NW.js
+grunt standalone:nw
 
   </pre>
 
