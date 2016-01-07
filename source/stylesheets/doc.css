@@ -47,10 +47,10 @@ pre.code {
 }
 
 header {
-  background : #572a79 url('/images/doc/logo.png') no-repeat 20px 20px;
+  background : #572a79 url('/images/doc/logo.png') no-repeat 20px center;
   color : #fff;
-  height : 80px;
-  line-height : 80px;
+  height : 100px;
+  line-height : 100px;
   padding-left : 180px;
   display : block;
 }
@@ -67,8 +67,7 @@ header ul {
   left : 0px;
   top : 0px;
   right : 0px;
-  height : 80px;
-  line-height : 80px;
+  height : 100px;
   margin : 0;
   padding : 0;
   text-align : right;
