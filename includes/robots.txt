@@ -4,6 +4,7 @@ Disallow: windows-installer.cmd
 Disallow: windows-installer.ps1
 Disallow: installer.exe
 Disallow: installer
+Disallow: doc/manuals/man-development.html
 Disallow: doc/client/srcjavascripthelpersiframe-applicationjs.html
 Disallow: doc/client/srcjavascriptguiselectlistjs.html
 Disallow: doc/client/srcjavascriptguicolorswatchjs.html
