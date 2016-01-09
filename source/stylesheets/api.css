@@ -142,3 +142,14 @@ content div pre {
   padding : 20px;
   color : #333;
 }
+
+pre {
+  font-weight : bold;
+  font-family : Monospace;
+  background : #f2f2f2;
+}
+
+pre.code {
+  font-weight : normal;
+  padding : 20px;
+}
