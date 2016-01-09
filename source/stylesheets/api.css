@@ -20,11 +20,12 @@ li a {
 }
 
 header {
-  background : #572a79 url('/images/doc/logo.png') no-repeat 20px 20px;
+  background : #572a79 url('/images/doc/logo.png') no-repeat 20px center;
   color : #fff;
-  height : 80px;
-  line-height : 80px;
+  height : 100px;
+  line-height : 100px;
   padding-left : 180px;
+  display : block;
 }
 header h1 {
   font-size : 20px;
@@ -39,8 +40,8 @@ header ul {
   left : 0px;
   top : 0px;
   right : 0px;
-  height : 80px;
-  line-height : 80px;
+  height : 100px;
+  line-height : 100px;
   margin : 0;
   padding : 0;
   text-align : right;
@@ -60,7 +61,7 @@ header li a {
 nav {
   position : absolute;
   left : 0px;
-  top : 80px;
+  top : 100px;
   bottom : 0px;
   width : 300px;
   background : #f2f2f2;
@@ -84,7 +85,7 @@ nav li a.Class {
 content {
   position : absolute;
   left : 300px;
-  top : 80px;
+  top : 100px;
   right : 0px;
   bottom : 0px;
   overflow : auto;

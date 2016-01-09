@@ -3,4 +3,5 @@ OSjs
 *.swo
 node_modules
 source/doc/client/srcclientjavascript*
+source/doc/server/srcservernode*
 source/_api_*

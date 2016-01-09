@@ -17,7 +17,6 @@ Array.prototype.unique = function(){
 
 (function(_fs, _path, _markdown) {
   var ROOT = _path.join(__dirname, 'OSjs');
-  var OUTDIR = _path.join(__dirname, 'source', 'doc', 'client');
 
   var NAMESPACES = [];
 
@@ -570,7 +569,42 @@ Array.prototype.unique = function(){
     smartypants: false
   });
 
-  var files = [
+  function generate(type, OUTDIR, files) {
+    NAMESPACES = [];
+
+    var menu = generateMenu(files);
+    var buffers = {};
+    var dst;
+
+    files.forEach(function(f) {
+      var buffer = readFile(_path.join(ROOT, f));
+      generateNamespace(_path.join(ROOT, f));
+      buffers[f] = buffer;
+    });
+
+    var namespaces = generateNamespaces();
+    dst = _path.join(__dirname, 'source', '_api_' + type + '_namespace.erb');
+    console.log('=>', dst);
+    _fs.writeFile(dst, namespaces);
+
+
+    dst = _path.join(__dirname, 'source', '_api_' + type + '_menu.erb');
+    console.log('=>', dst);
+    _fs.writeFile(dst, menu);
+
+    Object.keys(buffers).forEach(function(f) {
+      var filename = f.replace(/[^A-z0-9_\-]/g, '') + '.html.erb';
+      var html = '---\ntitle: ' + f + '\nlayout: api-' + type + '\n---\n';
+      html += buffers[f];
+
+      dst = _path.join(OUTDIR, filename);
+      console.log('=>', dst);
+
+      return _fs.writeFileSync(dst, html);
+    });
+  }
+
+  generate('client', _path.join(__dirname, 'source', 'doc', 'client'), [
     'src/client/javascript/init.js',
     'src/client/javascript/api.js',
     'src/client/javascript/process.js',
@@ -626,39 +660,16 @@ Array.prototype.unique = function(){
     'src/client/javascript/dialogs/fileupload.js',
     'src/client/javascript/dialogs/font.js',
     'src/client/javascript/dialogs/input.js'
+  ]);
 
-  ];
+  generate('server', _path.join(__dirname, 'source', 'doc', 'server'), [
+    'src/server/node/http.js',
+    'src/server/node/node_modules/osjs/api.js',
+    'src/server/node/node_modules/osjs/vfs.js',
+    'src/server/node/node_modules/osjs/osjs.js',
+    'src/server/node/node_modules/osjs/config.js',
+  ]);
 
-  var menu = generateMenu(files);
-  var buffers = {};
-  var dst;
-
-  files.forEach(function(f) {
-    var buffer = readFile(_path.join(ROOT, f));
-    generateNamespace(_path.join(ROOT, f));
-    buffers[f] = buffer;
-  });
-
-  var namespaces = generateNamespaces();
-  dst = _path.join(__dirname, 'source', '_api_namespace.erb');
-  console.log('=>', dst);
-  _fs.writeFile(dst, namespaces);
-
-
-  dst = _path.join(__dirname, 'source', '_api_menu.erb');
-  console.log('=>', dst);
-  _fs.writeFile(dst, menu);
-
-  Object.keys(buffers).forEach(function(f) {
-    var filename = f.replace(/[^A-z0-9_\-]/g, '') + '.html.erb';
-    var html = '---\ntitle: ' + f + '\nlayout: api\n---\n';
-    html += buffers[f];
-
-    dst = _path.join(OUTDIR, filename);
-    console.log('=>', dst);
-
-    return _fs.writeFileSync(dst, html);
-  });
 
 })(
   require("node-fs-extra"),
