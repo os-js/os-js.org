@@ -5,66 +5,16 @@ layout: api-server
 
 <h1>Server API Documentation</h1>
 <p>
-  A brief overview on the OS.js Server APIs.
+  The OS.js server is really simple. It consists of Core API (internal functions), Application API (application functions) and VFS (filesystem functions).
 </p>
 <%= partial "docheader" %>
 
-<h1>Overview</h1>
-
-The OS.js server is really simple.
-
-It only serves files and handles requests via GET/POST with JSON.
-
-<h2>API Requests</h2>
+<h2>HTTP API Requests</h2>
 <div class="indent">
-
   <pre>POST //osjs-host.net/API</pre>
 
   Request example:
   <pre class="code">
-  //
-  // Available methods and their arguments:
-  //
-  //  application:
-  //    All applications support their own internal API
-  //
-  //    Arguments:
-  //      String    path            Application path (ex: repo/PackageName)
-  //      String    application     Class name
-  //      String    method          Class static method to call
-  //      Object    arguments       Tuple/JSON of arguments
-  //
-  //  fs:
-  //    Call the OS.js internal VFS
-  //
-  //    Arguments:
-  //      String    method      The VFS function name
-  //      Array     arguments   List of arguments
-  //
-  //    Available VFS methods: scandir, write, read, delete, copy, move, mkdir, fileinfo exist
-  //    Arguments can be found in the client API documentation
-  //
-  //  curl:
-  //    Do a HTTP call
-  //
-  //    Arguments:
-  //      String    url           URL to call
-  //      String    method        HTTP Method (POST/GET)
-  //      Object    query         If POST. Payload tuple
-  //      int       timeout       (Optional) Define timeout in seconds
-  //      boolean   binary        (Optional) Return a binary ?
-  //      String    mime          (Optional) If a binary, which MIME?
-  //
-  //  login:
-  //    Depends on the Handler implementation
-  //
-  //    Arguments:
-  //      String    username
-  //      String    password
-  //
-  //  logout:
-  //    Depends on the Handler implementation
-  //
   {
     "method": "method_you_want_to_call",
     "arguments: {"arg": "value"}
@@ -80,7 +30,7 @@ It only serves files and handles requests via GET/POST with JSON.
   </pre>
 </div>
 
-<h2>Files</h2>
+<h2>HTTP File Requests</h2>
 <div class="indent">
 
   <h3>Resources</h3>
