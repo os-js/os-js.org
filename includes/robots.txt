@@ -55,3 +55,12 @@ Disallow: doc/client/srcclientjavascriptdialogserrormessagejs.html
 Disallow: doc/client/srcclientjavascriptguiselectlistjs.html
 Disallow: doc/client/srcclientjavascriptguipanedviewjs.html
 Disallow: doc/client/srcjavascriptguielementjs.html
+Disallow: doc/client/srcclientjavascriptguimenujs.html
+Disallow: doc/client/srcclientjavascriptguimenubarjs.html
+Disallow: doc/client/srcclientjavascriptguiprogressbarjs.html
+Disallow: doc/client/srcclientjavascriptguitoolbarjs.html
+Disallow: doc/client/srcclientjavascriptgui_inputjs.html
+Disallow: doc/client/srcclientjavascriptguicolorswatchjs.html
+Disallow: doc/client/srcclientjavascriptguitextjs.html
+Disallow: doc/client/srcclientjavascriptguiboxjs.html
+Disallow: doc/client/srcclientjavascriptguiradiojs.html
