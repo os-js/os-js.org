@@ -7,7 +7,7 @@
 #
 
 
-REPO="https://github.com/andersevenrud/OS.js-v2.git"
+REPO="https://github.com/os-js/OS.js.git"
 DEST="OS.js-v2"
 
 if [ -d "$DEST" ]; then
