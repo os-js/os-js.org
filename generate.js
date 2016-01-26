@@ -624,6 +624,15 @@ Array.prototype.unique = function(){
     'src/client/javascript/settings-manager.js',
     'src/client/javascript/package-manager.js',
 
+    'src/client/javascript/vfs/_null.js',
+    'src/client/javascript/vfs/_dav.js',
+    'src/client/javascript/vfs/_file.js',
+    'src/client/javascript/vfs/googledrive.js',
+    'src/client/javascript/vfs/onedrive.js',
+    'src/client/javascript/vfs/dropbox.js',
+    'src/client/javascript/vfs/osjs.js',
+    'src/client/javascript/vfs/user.js',
+
     'src/client/javascript/helpers/settings-fragment.js',
     'src/client/javascript/helpers/default-application.js',
     'src/client/javascript/helpers/default-application-window.js',
