@@ -13,7 +13,7 @@ layout: doc
   <li>Removing excess features / applications</li>
   <li>Configuring Authentication</li>
   <li>Configuring Multiple Users</li>
-  <li>Rebranding</li>
+  <li>Rebranding and Misc. Build Patterns</li>
   <li>Packinging and Deployment</li>
 </ul>
 
@@ -33,11 +33,66 @@ layout: doc
 </ul>
 
 <h2>Configuring Authentication</h2>
-
+<p>To configure your authentication please see the <a href="man-multiuser.html">"Setting up multi-user environment"</a> manual.</p>
 
 <h2>Configuring Multiple Users</h2>
+<p><i>Feature to come: At it's current state, deligating certain packages to multiple users has not yet been implmented.</i>.</p>
 
-<h2>Rebranding</h2>
+<h2>Rebranding and Misc. Build Patterns</h2>
 <p><i>Be aware of the license, the license terms must followed and must be accumpined to any derivative work of OS.js</i>.</p>
+<p>These set of instructions were taken from <a href="/doc/manuals/man-build-grunt.html">build system manual.</a></p>
+
+<pre class="code">
+  ## Config ##
+  # Set a config value
+  grunt config:set:PATH:VALUE
+  grunt config:set:client.Locale:en_EN
+
+  # Get a config value
+  grunt config:get:PATH
+  grunt config:get:client.Locale
+
+  # Get entire config
+  grunt config:get
+
+  # Add a preload (custom library or stylesheet etc)
+  grunt preload:NAME:PATH:TYPE
+  grunt preload:mylib:/vendor/mylib.js:javascript
+  grunt preload:mystyle:/vendor/mystyle.css:stylesheet
+
+  # Add or remove repositories from list
+  grunt config:add-repository:NAME
+  grunt config:remove-repository:NAME
+ 
+  ## Packages ##
+  # Builds all packages
+  grunt packages
+
+  # Builds spesific package
+  #`default` for REPONAME can be specified if you don't have a custom repo.
+  grunt packages:REPONAME/PACKAGENAME
+
+  # Enables given package
+  grunt packages:enable:REPONAME/PACKAGENAME
+
+  # Disables given package
+  grunt packages:disable:REPONAME/PACKAGENAME
+  
+  ## After you have made changes ##
+  
+  # Rebuild config files
+  grunt config
+  
+  # Rebuild manifest file
+  grunt manifest
+  
+  # Rebuild themes
+  grunt themes
+  
+  # Rebuild core
+  grunt core
+  
+</pre>
+
 
 <h2>Packaging and Deployment</h2>
