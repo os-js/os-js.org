@@ -11,13 +11,13 @@ layout: api-server
 
 <h2>HTTP API Requests</h2>
 <div class="indent">
-  <pre>POST //osjs-host.net/API</pre>
+  <pre>POST //osjs-host.net/API/{method}</pre>
+  <pre>POST //osjs-host.net/FS/{method}</pre>
 
   Request example:
   <pre class="code">
   {
-    "method": "method_you_want_to_call",
-    "arguments: {"arg": "value"}
+    "arg": "value"
   }
   </pre>
 
@@ -55,7 +55,7 @@ Content-Type:text/plain; charset=utf-8
   </p>
 
   <p>Example Request:</p>
-  <pre>GET //osjs-host.net/FS/osjs/vfs/path/file.ext</pre>
+  <pre>GET //osjs-host.net/FSosjs:////vfs/path/file.ext</pre>
 
   <p>Example Response:</p>
   <pre class="code">
@@ -67,7 +67,7 @@ Content-Type:text/plain; charset=utf-8
 
   <h3>Uploading</h3>
 
-  <pre>POST //osjs-host.net/FS</pre>
+  <pre>POST //osjs-host.net/FS/upload</pre>
 
   With form data (multipart/form-data)
   <pre class="code">
