@@ -64,3 +64,11 @@ Disallow: doc/client/srcclientjavascriptguicolorswatchjs.html
 Disallow: doc/client/srcclientjavascriptguitextjs.html
 Disallow: doc/client/srcclientjavascriptguiboxjs.html
 Disallow: doc/client/srcclientjavascriptguiradiojs.html
+Disallow: doc/client/srcclientjavascriptvfs_davjs.html
+Disallow: doc/client/srcclientjavascriptvfs_nulljs.html
+Disallow: doc/client/srcclientjavascriptvfsdropboxjs.html
+Disallow: doc/client/srcclientjavascriptvfsgoogledrivejs.html
+Disallow: doc/client/srcclientjavascriptvfsonedrivejs.html
+Disallow: doc/client/srcclientjavascriptvfsosjsjs.html
+Disallow: doc/client/srcclientjavascriptvfsuserjs.html
+
