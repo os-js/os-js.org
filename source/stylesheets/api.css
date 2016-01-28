@@ -153,3 +153,7 @@ pre.code {
   font-weight : normal;
   padding : 20px;
 }
+
+div.indent {
+  padding-left : 20px;
+}

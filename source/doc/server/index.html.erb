@@ -16,17 +16,17 @@ layout: api-server
 
   Request example:
   <pre class="code">
-  {
-    "arg": "value"
-  }
+{
+  "arg": "value"
+}
   </pre>
 
   Responds with:
   <pre class="code">
-  {
-    "error": null, // String if error
-    "result": null
-  }
+{
+  "error": null, // String if error
+  "result": null
+}
   </pre>
 </div>
 
@@ -38,7 +38,7 @@ layout: api-server
   Should be handleded by the web-server normally. You just serve files from <i>dist</i> or <i>dist-dev</i> directory.
 
   Example request:
-  <pre>GET //osjs-host.net/osjs.js</pre>
+  <pre>GET //osjs-host.net/{path}</pre>
 
   Example Response:
   <pre class="code">
@@ -55,7 +55,7 @@ Content-Type:text/plain; charset=utf-8
   </p>
 
   <p>Example Request:</p>
-  <pre>GET //osjs-host.net/FSosjs:////vfs/path/file.ext</pre>
+  <pre>GET //osjs-host.net/FS{vfs-path}</pre>
 
   <p>Example Response:</p>
   <pre class="code">
