@@ -678,6 +678,7 @@ Array.prototype.unique = function(){
     'src/server/node/node_modules/osjs/vfs.js',
     'src/server/node/node_modules/osjs/osjs.js',
     'src/server/node/node_modules/osjs/config.js',
+    'src/server/node/node_modules/osjs/handler.js'
   ]);
 
 
