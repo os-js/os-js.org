@@ -157,3 +157,7 @@ pre.code {
 div.indent {
   padding-left : 20px;
 }
+
+.center {
+  text-align : center;
+}
