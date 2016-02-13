@@ -13,20 +13,20 @@ layout: doc
 </p>
 <ol>
   <li>Create a new package with <b>grunt create-package:MyModule</b></li>
-  <li>Delete everything except package.json</li>
-  <li>Change package.json to look like example below</li>
+  <li>Delete everything except metadata.json</li>
+  <li>Change metadata.json to look like example below</li>
   <li>Add api extension, either PHP or Node. Examples below</li>
   <li>Rebuild with <b>grunt packages config</b> (dist), or <b>grunt config</b> (dist-dev)</li>
 </ol>
 
-<h3>package.json</h3>
+<h3>metadata.json</h3>
 <pre class="code">
 {
   "className": "ExtensionMyModule",
   "type": "extension",
   "build": {
     "copy" : [
-      "package.json",
+      "metadata.json",
       "api.js",
       "api.php"
     ]
