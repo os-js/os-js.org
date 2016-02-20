@@ -11,6 +11,10 @@ body {
   background : #fff;
 }
 
+main {
+  line-height : 30px;
+}
+
 .wrapper {
   width : 770px;
   margin : 0 auto;
