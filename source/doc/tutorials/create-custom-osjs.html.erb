@@ -1,0 +1,127 @@
+---
+title: Tutorial - Create your own Custom OS.js instance
+layout: doc
+---
+<h1>Tutorial: Create your own Custom OS.js instance</h1>
+
+<h2>Introduction</h2>
+<p>
+  This tutorial will help you configure and build your own OS.js instance or "distro", using the various grunt commands built into OS.js.
+</p>
+<p>
+  Below is a list of various aspects of OS.js that will be configured in this tutorial.
+</p>
+
+<ul>
+  <li>Adding Applications / Packages / Panel items / Themes</li>
+  <li>Removing excess features / applications</li>
+  <li>Configuring Authentication and Multiple Users</li>
+  <li>Configuring Multiple Users Package Permissions</li>
+  <li>Rebranding and Misc. Build Patterns</li>
+  <li>Packinging and Deployment</li>
+</ul>
+
+<h2>Prerequisites</h2>
+<p>
+  Follow the installation steps for your particular platform <a href="https://github.com/os-js/OS.js/blob/master/INSTALL.md">here</a>
+</p>
+
+<h2>Adding Applications / Packages / Panel items / Themes to your distro</h2>
+<p>
+  To add custom applications / packages, panel items, or themes please follow these tutorials:
+</p>
+
+<ul>
+  <li><a href="/doc/tutorials/create-application.html">Create your own application</a></li>
+  <li><a href="/doc/tutorials/create-application-continued.html">Create your own application (continued)</a></li>
+  <li><a href="/doc/tutorials/iframe-application.html">Create your own IFrame Application</a></li>
+  <li><a href="/doc/tutorials/create-theme.html">Create your own theme</a></li>
+  <li><a href="/doc/tutorials/create-panelitem.html">Create your own panel item</a></li>
+</ul>
+
+<h2>Configuring Authentication and Multiple Users</h2>
+<p>
+  To configure your authentication please see the <a href="man-multiuser.html">"Setting up multi-user environment"</a> manual.
+</p>
+
+<h2>Configuring Multiple Users Package Permissions</h2>
+<p>
+  In each package, within <pre class="code">src/packages/<repo>/<packages></pre> directory, you can add <pre class="code">groups: [<usernames>]</pre> to the package.json file.
+</p>
+<p>
+  This will limit packages to certain users that you specify in the file.
+</p>
+
+<h2>Rebranding and Misc. Build Patterns</h2>
+<p>
+  <i>Be aware of the license, the license terms must followed and must be accumpined to any derivative work of OS.js</i>.
+</p>
+<p>
+  These set of instructions were taken from <a href="/doc/manuals/man-build-grunt.html">build system manual.</a>
+</p>
+
+<pre class="code">
+
+  ## Config ##
+  # Set a config value
+  grunt config:set:PATH:VALUE
+  grunt config:set:client.Locale:en_EN
+
+  # Get a config value
+  grunt config:get:PATH
+  grunt config:get:client.Locale
+
+  # Get entire config
+  grunt config:get
+
+  # Add a preload (custom library or stylesheet etc)
+  grunt preload:NAME:PATH:TYPE
+  grunt preload:mylib:/vendor/mylib.js:javascript
+  grunt preload:mystyle:/vendor/mystyle.css:stylesheet
+
+  # Add or remove repositories from list
+  grunt config:add-repository:NAME
+  grunt config:remove-repository:NAME
+ 
+  ## Packages ##
+  # Builds all packages
+  grunt packages
+
+  # Builds spesific package
+  #`default` for REPONAME can be specified if you don't have a custom repo.
+  grunt packages:REPONAME/PACKAGENAME
+
+  # Enables given package
+  grunt packages:enable:REPONAME/PACKAGENAME
+
+  # Disables given package
+  grunt packages:disable:REPONAME/PACKAGENAME
+  
+  ## After you have made changes ##
+  
+  # Rebuild config files
+  grunt config
+  
+  # Rebuild manifest file
+  grunt manifest
+  
+  # Rebuild themes
+  grunt themes
+  
+  # Rebuild core
+  grunt core
+  
+</pre>
+
+<p>
+  Branding for the faivcon, splash screen, and other icons can be replaced with the appropriate names in the <pre class="code">src/templates/dist/templates</pre> directory.
+</p>
+
+
+<h2>Packaging and Deployment</h2>
+<p>
+  There are many ways to package and deploy your custom instance beyond servering it from the OS.js repo you pull down from git.
+  To see other ways to deploy your OS.js instance, you can look at the RUNNING section of the INSTALL.md document inside your OS.js repo.
+</p>
+
+
