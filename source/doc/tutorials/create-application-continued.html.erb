@@ -3,20 +3,21 @@ title: Tutorial - Create your own application (continued)
 layout: doc
 ---
 <h1>Tutorial: Create your own application (continued)</h1>
-
-<p>
-  More tutorials to come!
-</p>
-
-<h2>Designing UI</h2>
-<p>
-  Your <i>scheme.html</i> file is used for designing the UI of your application. You can use standard HTML markup, but this example shows the use of some internal elements.
-</p>
-<p>
-  The entire GUI API is <a href="/doc/client/">documented</a> (scroll down in the left column until you reach the "GUI" section).
-</p>
 <div class="indent">
-  <pre class="code">
+
+  <p>
+    More tutorials to come!
+  </p>
+
+  <h2>Designing UI</h2>
+  <div class="indent">
+    <p>
+      Your <i>scheme.html</i> file is used for designing the UI of your application. You can use standard HTML markup, but this example shows the use of some internal elements.
+    </p>
+    <p>
+      The entire GUI API is <a href="/doc/client/">documented</a> (scroll down in the left column until you reach the "GUI" section).
+    </p>
+    <pre class="code">
 
 &lt;application-window data-id="MyNameWindow"&gt;
 
@@ -49,16 +50,17 @@ layout: doc
 
 &lt;/application-window&gt;
 
-  </pre>
-</div>
+    </pre>
+  </div>
 
 
-<h2>Events and manipulation</h2>
-<p>
-  In <i>main.js</i> you can add events and make interactions with the UI you just created. In this example we just handle some buttons and menus.
-</p>
-<div class="indent">
-  <pre class="code">
+  <h2>Events and manipulation</h2>
+  <div class="indent">
+    <p>
+      In <i>main.js</i> you can add events and make interactions with the UI you just created. In this example we just handle some buttons and menus.
+    </p>
+    <pre class="code">
+
 ApplicationMyNameWindow.prototype.init = function(wm, app, scheme) {
   var self = this;
   var root = Window.prototype.init.apply(this, arguments);
@@ -88,9 +90,18 @@ ApplicationMyNameWindow.prototype.init = function(wm, app, scheme) {
 
   return root;
 };
-  </pre>
-</div>
-<h2>More advanced examples</h2>
-<div class="indent">
-  <p>You can extend the classes <b>DefaultApplication</b> and <b>DefaultApplicationWindow</b> for super-simple handling of opening/saving and creating files. It will also handle dnd and launch/restore arguments for you. Almost all internal OS.js applications use these.</p>
-</div>
+
+    </pre>
+  </div>
+
+  <h2>More advanced examples</h2>
+  <div class="indent">
+    <p>You can extend the classes <b>DefaultApplication</b> and <b>DefaultApplicationWindow</b> for super-simple handling of opening/saving and creating files. It will also handle dnd and launch/restore arguments for you. Almost all internal OS.js applications use these.</p>
+  </div>
+
+  <h2>Tips</h2>
+  <div class="indent">
+    <p>
+      If you want to reaload your application when it has been updated simply run "OSjs.API.relaunch('ApplicationMyPackageName')" in the developer console of your browser.
+    </p>
+  </div>

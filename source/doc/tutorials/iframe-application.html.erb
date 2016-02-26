@@ -11,25 +11,13 @@ layout: doc
 grunt create-package:default/MyPackageName:iframe
   </pre>
 
-  <h2>Example code</h2>
+  <h2>Create your application</h2>
   <p>
-    In this example we have a simple directory called "data" inside the application with the file "index.html" where
-    your code will be
+    Simply create the directory "data" in your application directory (src/packages/MyPackageName) with the file "index.html".
   </p>
-  <pre class="code">
-function ApplicationExample(args, metadata) {
-  Application.apply(this, ['ApplicationExample', args, metadata, {
-    src: 'data/index.html',
-    title: metadata.name,
-    icon: metadata.icon,
-    width: 640,
-    height: 480,
-    allow_resize: false,
-    allow_restore: false,
-    allow_maximize: false
-  }]);
-}
-  </pre>
+  <p>
+    Then go ahead and write your app in the "index.html" file.
+  </p>
 
   <h2>Bi-directional communication</h2>
   <p>
@@ -39,5 +27,22 @@ function ApplicationExample(args, metadata) {
     <li><a href="https://gist.github.com/andersevenrud/dd5b2ef49eb8c3888629">IFrame Application Code example</a></li>
     <li><a href="https://gist.github.com/andersevenrud/3ce81c9be9d8a6b8aa08">OS.js Application Code example</a></li>
   </ul>
+
+  <h2>Including resources</h2>
+  <p>
+    If you want to include resources into your application, make sure to use relative paths.
+  </p>
+  <pre class="code">
+
+&lt;script src="mylib.js"&gt;&lt;/script&gt;
+
+&lt;link rel="stylesheet" type="text/css" src="mylib.css" /&gt;
+
+  </pre>
+
+  <h2>Tips</h2>
+  <p>
+    If you want to reaload your application when it has been updated simply run "OSjs.API.relaunch('ApplicationMyPackageName')" in the developer console of your browser.
+  </p>
 
 </div>
