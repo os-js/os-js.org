@@ -5,4 +5,3 @@ all:
 	git checkout -- source/doc/server/index.html.erb
 	node generate.js
 	bundle exec middleman build
-	cp -r includes/* build/
