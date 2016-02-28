@@ -41,7 +41,7 @@ layout: doc
 
 (function() {
 
-  exports.register = function(CONFIG, API) {
+  exports.register = function(API, VFS, instance) {
     API.myMethodName = function(args, callback, request, response) {
       callback(false, false);
     };
