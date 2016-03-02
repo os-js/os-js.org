@@ -9,6 +9,9 @@ layout: doc
       <p>
         Very usefull if you want to create new features in OS.js without touching the main codebase. An example of this would be new Dialogs, VFS and API methods, more Utils and such.
       </p>
+      <p>
+        This includes both server and client (but you can do only one if you choose).
+      </p>
 
       <h2>Create from template</h2>
       <div class="indent">
@@ -17,6 +20,9 @@ layout: doc
         <pre>grunt create-package:default/MyName:extension</pre>
         <p>
           The "default" is the name of the repository folder you want to place your package in.
+        </p>
+        <p>
+          You will end up with "extension.js" (for client), "api.js" (for server) and "metadata.json" (see below)
         </p>
       </div>
 
