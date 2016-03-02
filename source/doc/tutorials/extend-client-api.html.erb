@@ -8,10 +8,6 @@ layout: doc
   This tutorial show you how to add client (javscript) API extensions.
 </p>
 
-<p><b>You can use this in combination with Server API Extensions</b></p>
-
-<h2>Method 1 - Core Extension</h2>
-
 <ol>
   <li>Create a new file, ex: src/client/javascript/helpers/my-module.js</li>
   <li>Add the file to: src/conf/200-compile.json</li>
@@ -43,14 +39,4 @@ layout: doc
   OSjs.Helpers.MyModule = MyModule;
 
 })(OSjs.Utils, OSjs.VFS, OSjs.API);
-</pre>
-
-<h2>Method 2 - Package Extension</h2>
-<p>
-  Just create a new package:
-</p>
-<pre class="code">
-grunt create-package:default/MyExtension:extension
-edit src/packages/default/MyExtension/extension.js
-grunt manifest config packages # packages only required on 'dist'
 </pre>
