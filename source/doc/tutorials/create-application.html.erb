@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Create your own application
+title: Tutorial - Create your own Application
 layout: doc
 ---
       <h1>Tutorial: Create your own application</h1>
@@ -10,82 +10,174 @@ layout: doc
       <div class="indent">
         <p>Simply run:</p>
 
-        <pre>grunt create-package:MyName</pre>
+        <pre>grunt create-package:default/MyName</pre>
+        <p>
+          The "default" is the name of the repository folder you want to place your package in.
+        </p>
 
         <p>This will create some source files for you with usable code. You'll have a basic running application with a Window.</p>
       </div>
 
-      <h2>Update manifest</h2>
+      <h2>Update metadata</h2>
       <div class="indent">
         <p>
-          The manifest holds information about your package, like name, description, icon and used resources.
-          Update <b>metadata.json</b> to fit your application.
+          The metadata file holds general information about your application and stuff used in the building process.
         </p>
         <p>
-          <i>This is not required and can be done later</i>
+          <i>You don't have to do this, but this shows what values you can put in</i>
         </p>
-        <p>
-          Example with all available entries:
-        </p>
-        <pre class="code">
-{
-  // ClassName used in namespaces
-  "className":  "ApplicationMyName",
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Description</th>
+              <th>Required</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>className</td>
+              <td>The name of your JavaScript namespace</td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>enabled</td>
+              <td>If your package is enabled or not</td>
+              <td>No</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>singular</td>
+              <td>Allow only one instance of the application running</td>
+              <td>No</td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>The name of your package</td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>description</td>
+              <td>The description of your package</td>
+              <td>No</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>category</td>
+              <td>The category of your package</td>
+              <td>No</td>
+              <td>other</td>
+            </tr>
+            <tr>
+              <td>icon</td>
+              <td>
+                The icon filename
+                <pre>
+# From icon theme:
+"icon": "category/name.png",
 
-  // If 'false' application will not be loaded or launchable (Optional)
-  "enabled":    true,
-
-  // Application description (optional)
-  "description":"Application Long Description",
-
-  // Application name
-  "name":       "Application Name",
-
-  // Application category (optional)
-  "category":   "unknown",
-
-  // Or an array of regext match MIME strings (Optional)
-  "mime":       null,
-
-  // Application icon (use ./my-icon.png for icon inside app folder)
-  "icon":       "apps/file-manager.png",
-
-  // Allow only one instance ? (Optional)
-  "singular":   false,
-
-  // Show a splash screen when loading application (Optional)
-  "splash":     false,
-
-  // Array of features to check for (Optional, uses Utils.getCompability())
-  "compability":[],
-
-  // A list of files to preload in order to run app
-  "preload":    [
-    {"src": "main.js", "type": "javascript"},
-    {"src": "main.css", "type": "stylesheet"},
-    {"src": "foo.js", "type": "javascript", combine: false} // Do not combine this script in 'dist'
-  ],
-
-  // For translations of name and description
-  "names" : {
-    "no_NO" : "Norwegian name"
-  }
-  "descriptions" : {
-    "no_NO" : "Norwegian description"
-  }
+# From application directory
+"icon": "./name.png",
+                </pre>
+              </td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>splash</td>
+              <td>Show a splash screen when application starts</td>
+              <td>No</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>names</td>
+              <td>
+                Localization of the 'name' attribute
+                <pre>
+"names" : {
+  "no_NO" : "Norwegian name"
 }
-        </pre>
+                </pre>
+              </td>
+              <td>No</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>descriptions</td>
+              <td>
+                Localization of the 'description' attribute
+                <pre>
+"names" : {
+  "no_NO" : "Norwegian description"
+}
+                </pre>
+              </td>
+              <td>No</td>
+              <td>true</td>
+            </tr>
+
+            <tr>
+              <td>mime</td>
+              <td>
+                What MIME types your package supports (Array with regexp)
+                <pre>
+"mime": [
+  "^text",
+  "inode\\/x\\-empty",
+  "application\\/x\\-empty",
+  "application\\/x\\-lua",
+  "application\\/x\\-python",
+  "application\\/javascript",
+  "application\\/json"
+],
+                </pre>
+              </td>
+              <td>No</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>compability</td>
+              <td>
+                Check for these browser features when starting application (Array of strings)
+                <pre>
+# See OSjs.Utils.getCompability()
+
+"compabiltiy": [
+  "canvas", "blob", "audio", "video"
+],
+                </pre>
+              </td>
+              <td>No</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>preload</td>
+              <td>
+                The list of resources to preload
+                <pre>
+"preload":    [
+  {"src": "main.js", "type": "javascript"},
+  {"src": "main.css", "type": "stylesheet"},
+  {"src": "foo.js", "type": "javascript", combine: false} // Do not combine this script in 'dist'
+],
+                </pre>
+              </td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <h2>Install</h2>
       <div class="indent">
         <p>Now run this command to add it to global manifest (make it visible in OS.js)</p>
-        <pre>grunt manifest</pre>
-
-        <br />
-
-        <p>And, if you're using dist (production environment)</p>
-        <pre>grunt packages:default/MyName</pre>
-        <p>"default" is the repository name which is the default</p>
+        <pre>grunt manifest config packages:default/MyName</pre>
+        <p>
+          If you are using "dist-dev", you don't have to run the "packages" grunt command.
+        </p>
       </div>
-

@@ -1,0 +1,113 @@
+---
+title: Tutorial - Create your own Extension
+layout: doc
+---
+      <h1>Tutorial: Create your own Extension</h1>
+      <p>
+        An <b>Extension</b> allows you to hook into, extend, add and modify the Core OS.js features. It works sort of like a "plugin".
+      </p>
+
+      <h2>Create from template</h2>
+      <div class="indent">
+        <p>Simply run:</p>
+
+        <pre>grunt create-package:default/MyName:extension</pre>
+        <p>
+          The "default" is the name of the repository folder you want to place your package in.
+        </p>
+      </div>
+
+      <h2>Update manifest</h2>
+      <div class="indent">
+        <p>
+          The metadata file holds general information about your application and stuff used in the building process.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Description</th>
+              <th>Required</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>enabled</td>
+              <td>If your package is enabled or not</td>
+              <td>No</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>The name of your package</td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>description</td>
+              <td>The description of your package</td>
+              <td>No</td>
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>preload</td>
+              <td>
+                The list of resources to preload
+                <pre>
+"preload":    [
+  {"src": "main.js", "type": "javascript"},
+  {"src": "main.css", "type": "stylesheet"},
+  {"src": "foo.js", "type": "javascript", combine: false} // Do not combine this script in 'dist'
+],
+                </pre>
+              </td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>copy</td>
+              <td>
+                List of files to copy into your 'dist' (useful for removing sensitive server-side stuff)
+                <pre>
+"dist": {
+  "copy": [
+    "extension.js"
+  ]
+},
+                </pre>
+              </td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+              <td>conf</td>
+              <td>
+                List of config files that are applied just like src/conf. (Note: These are loaded with lowest priority)
+                <pre>
+"conf": [
+  "mycustomconfig.json"
+]
+                </pre>
+              </td>
+              <td>Yes</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Install</h2>
+      <div class="indent">
+        <p>Now run this command to add it to global manifest (make it visible in OS.js)</p>
+        <pre>grunt manifest config packages:default/MyName</pre>
+        <p>
+          If you are using "dist-dev", you don't have to run the "packages" grunt command.
+        </p>
+        <p>
+          The extension is now installed and automatically loaded on startup!
+        </p>
+      </div>

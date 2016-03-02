@@ -112,3 +112,23 @@ footer img {
   margin-top : 80px;
   margin-bottom : 30px;
 }
+
+table {
+  width : 100%;
+}
+table th,
+table td {
+  vertical-align : top;
+  padding : 5px;
+}
+table tr {
+  background : #eee;
+}
+table tr:nth-child(2n+1) {
+  background : #e6e6e6;
+}
+table pre {
+  background-color : #fff;
+  margin : 5px;
+  padding : 5px;
+}
