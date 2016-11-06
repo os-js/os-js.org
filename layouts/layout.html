@@ -28,13 +28,14 @@
       <div id="Logo"></div>
       <nav>
         <a href="/">Home</a>
-        <a href="/manual" class="active">Manual</a>
-        <a href="/doc">Documentation</a>
+        <a href="/manual" {{#startsWith "manual" this.path}}class="active"{{/startsWith}}>Manual</a>
+        <a href="/doc" {{#startsWith "doc" this.path}}class="active"{{/startsWith}}>Documentation</a>
       </nav>
     </header>
 
     <main>
       <aside id="sidebar">
+{{#startsWith "manual" this.path}}
         <nav>
           <ol>
             <li>
@@ -201,6 +202,7 @@
           </ol>
 
         </nav>
+{{/startsWith}}
       </aside>
 
       <content>

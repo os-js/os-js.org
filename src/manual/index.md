@@ -8,3 +8,6 @@ layout: layout.html
 Welcome to the OS.js documentation manual.
 
 You can navigate between the different sections in the left menu.
+
+**If you're looking for API documentation, head over to [the documentation section](/doc)**
+

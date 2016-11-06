@@ -1,4 +1,5 @@
-@sidebar-width: 360px;
+@sidebar-width: 300px;
+@sidebar-alternative-width : 360px;
 @header-height: 84px;
 
 html, body {
@@ -244,4 +245,17 @@ footer {
   &:extend(.container);
   text-align : center;
   font-size : 70%;
+}
+
+/**
+ * Documentation pages
+ */
+body#documentation {
+  #Logo {
+    width : @sidebar-alternative-width;
+  }
+  aside#sidebar {
+    flex: 0 0 @sidebar-alternative-width;
+    width : @sidebar-alternative-width;
+  }
 }

@@ -7,13 +7,19 @@ const ignore = require('metalsmith-ignore');
 const watch = require('metalsmith-watch');
 const metalsmithPrism = require('metalsmith-prism');
 
+const handlebars = require('handlebars');
+handlebars.registerHelper('startsWith', function(prefix, str, options) {
+  if ( str.substr(0, prefix.length) === prefix ) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 var i = Metalsmith(__dirname)
   .metadata({
     sitename: "OS.js",
     siteurl: "https://os.js.org/",
-    description: "OS.js",
-    generatorname: "Metalsmith",
-    generatorurl: "http://metalsmith.io/"
+    description: "OS.js"
   })
   .source('./src')
   .destination('./build')
