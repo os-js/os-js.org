@@ -1,6 +1,7 @@
 {
   "source": {
     "include": ["OS.js/src/server/node/"],
+    "recurse": true,
     "excludePattern": ""
   }
 }

@@ -1,6 +1,15 @@
 {
   "source": {
-    "include": ["OS.js/src/client/javascript/", "OS.js/src/client/javascript/vfs", "OS.js/src/client/javascript/utils", "OS.js/src/client/javascript/dialogs", "OS.js/src/client/javascript/helpers", "OS.js/src/client/javascript/gui", "OS.js/src/client/javascript/vfs/mounts"],
+    "include": [
+      "OS.js/src/client/javascript/",
+      "OS.js/src/client/javascript/core",
+      "OS.js/src/client/javascript/vfs",
+      "OS.js/src/client/javascript/utils",
+      "OS.js/src/client/javascript/dialogs",
+      "OS.js/src/client/javascript/helpers",
+      "OS.js/src/client/javascript/gui",
+      "OS.js/src/client/javascript/vfs/mounts"
+    ],
     "excludePattern": ""
   }
 }

@@ -6,9 +6,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism-tomorrow.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-    <link href="/css/manual.css" rel="stylesheet" />
+    <link href="/css/jsdoc.css" type="text/css" rel="stylesheet" />
+    <link href="/css/manual.css" type="text/css" rel="stylesheet" />
 
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -65,6 +64,37 @@
         </footer>
       </content>
     </main>
+
+    <script>
+    (function() {
+      (['HTMLCollection', 'NodeList', 'FileList']).forEach(function(p) {
+        if ( window[p] ) {
+          window[p].prototype.forEacH = Array.prototype.forEach;
+        }
+      });
+
+      var a = location.pathname.split('/')
+      a = a[a.length - 1].replace(/\.html/, '')
+
+      function toggleFold(id, close) {
+        document.querySelectorAll('li[data-name="' + id + '"] .sub').forEach(function(el) {
+          el.style.display = close ? 'none' : 'block';
+        });
+        document.querySelector('li[data-name="' + id + '"] .folder').innerHTML = close ? '+' : '-';
+        document.querySelector('li[data-name="' + id + '"] .folder').setAttribute('data-open', String(!close));
+      }
+
+      document.querySelectorAll('.folder').forEach(function(el) {
+        el.addEventListener('click', function() {
+          toggleFold(el.parentNode.getAttribute('data-name'), this.getAttribute('data-open') === 'true');
+        });
+      });
+
+      toggleFold(a, false);
+
+    })();
+    </script>
+
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
