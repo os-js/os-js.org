@@ -3,7 +3,10 @@ build: node_modules jsdoc static
 
 static:
 	node index.js
-	cp CNAME build/
+	cp -r static/* build/
+
+watch:
+	node index.js --watch
 
 jsdoc:
 	rm -rf build/doc
@@ -16,4 +19,4 @@ jsdoc:
 node_modules: package.json
 	npm install
 
-.PHONY: build jsdoc static
+.PHONY: build jsdoc static watch

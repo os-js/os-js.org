@@ -7,7 +7,7 @@ const ignore = require('metalsmith-ignore');
 const watch = require('metalsmith-watch');
 const metalsmithPrism = require('metalsmith-prism');
 
-Metalsmith(__dirname)
+var i = Metalsmith(__dirname)
   .metadata({
     sitename: "OS.js",
     siteurl: "https://os.js.org/",
@@ -30,15 +30,19 @@ Metalsmith(__dirname)
   ]))
   .use(layouts({
     engine: 'handlebars'
-  }))
-  .use(watch({
+  }));
+
+if ( process.argv[2] === '--watch' ) {
+  i.use(watch({
     paths: {
       "${source}/**/*": true,
       "layouts/**/*": "**/*"
     },
     livereload: true,
-  }))
-  .build(function(err) {
-    if (err) throw err;
-  });
+  }));
+}
+
+i.build(function(err) {
+  if (err) throw err;
+});
 
