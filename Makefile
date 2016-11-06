@@ -3,7 +3,6 @@ build: node_modules jsdoc static
 
 static:
 	node index.js
-	cp -r static/* build/
 
 watch:
 	node index.js --watch
