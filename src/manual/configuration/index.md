@@ -86,6 +86,24 @@ Modify your `metadata.json` file and modify the preload section:
 }
 ```
 
+### Adding overlays
+
+You can also add overlays into the build process:
+
+```json
+{
+  "build": {
+    "overlays": {
+      "example": {
+        "locales": [],
+        "javascript": [],
+        "stylesheets": []
+      }
+    }
+  }
+}
+```
+
 ### Programatic approach
 
 ```js
