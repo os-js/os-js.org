@@ -69,10 +69,16 @@ You can also perform VFS operations on the server. It uses the same methods and 
 
 const _vfs = require('lib/vfs.js');
 
-_vfs._request(instance, http, 'read', {path: 'osjs:///foo.txt'}).then(function(data) {
+// Normal way
+_vfs._request(http, 'read', {path: 'osjs:///foo.txt'}).then(function(data) {
   console.info(data);
 }).catch(function(error) {
   console.error(error);
 });
+
+// Or alternatively. Here you also have access to a special `$:///` mount, which is the root of your system.
+_vfs._vrequest('read', {path: 'home:///foo.txt'}, {username: 'demo'}).then(function(data) {
+  // ...
+}).catch(/* ... */);
 
 ```
