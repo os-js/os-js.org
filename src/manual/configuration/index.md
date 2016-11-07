@@ -13,6 +13,12 @@ The files are divided into sections and prefixed with a number so that they load
 
 See the [Build Commands](/manual/build/cli) page for more information about environments.
 
+```bash
+
+# Set your timezone manually
+$ grunt config:set --name=tz --value=Europe/Oslo
+```
+
 ---
 
 ## Settings

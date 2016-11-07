@@ -90,5 +90,6 @@ $ git add src/client/javascript/init.js
 $ git commit -m "API: Fix exception on init when connection is lost"
 $ git push origin issue-XXX
 
-Now go to the OS.js repository [pull request](https://github.com/os-js/OS.js/pulls) page. Find your branch and press "Create pull request". Fill in the details and submit. It will be looked at ASAP.
 ```
+
+Now go to the OS.js repository [pull request](https://github.com/os-js/OS.js/pulls) page. Find your branch and press "Create pull request". Fill in the details and submit. It will be looked at ASAP.
