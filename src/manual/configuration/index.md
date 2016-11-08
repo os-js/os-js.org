@@ -14,7 +14,6 @@ The files are divided into sections and prefixed with a number so that they load
 See the [Build Commands](/manual/build/cli) page for more information about environments.
 
 ```bash
-
 # Set your timezone manually
 $ grunt config:set --name=tz --value=Europe/Oslo
 ```
@@ -34,11 +33,8 @@ See the [Build Commands](/manual/build/cli) page for more information about sett
 
 ```bash
 $ grunt config:set:themes.styleBase:"custom.less"
-$ grunt config
 $ edit src/client/stylesheets/custom.less
-
-# Run this to update changes
-$ grunt themes
+$ grunt build:themes build:config
 ```
 
 #### Example file
@@ -108,9 +104,9 @@ You can also add overlays into the build process:
 
 ```js
 var list = [
-  {type: 'javascript', src: 'local/script/file.js'},
-  {type: 'stylesheet', src: '/vendor/stylesheet.css'},
-  {type: 'javascript', src: 'http://external/javascript/file.js'}
+  'local/script/file.js',
+  '/vendor/stylesheet.css',
+  'http://external/javascript/file.js'
 ];
 
 Utils.preload(list, function() {

@@ -14,6 +14,9 @@ handlebars.registerHelper('startsWith', function(prefix, str, options) {
   }
   return options.inverse(this);
 });
+handlebars.registerHelper('pathClass', function(str) {
+  return str.replace(/[^A-z0-9]/g, '_');
+});
 
 var i = Metalsmith(__dirname)
   .metadata({

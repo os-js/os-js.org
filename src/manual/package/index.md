@@ -183,14 +183,3 @@ this._api('test', {}, function(err, res) {
   console.log('Result from your server API method', err, res);
 });
 ```
-
----
-
-# Repositories
-
-- https://github.com/os-js/OS.js-examples
-- https://github.com/os-js/OS.js-experimental
-- https://github.com/os-js/OS.js-submissions
-- https://github.com/os-js/OS.js-development
-- https://github.com/os-js/OS.js-system
-- https://github.com/os-js/OS.js-games

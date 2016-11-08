@@ -7,13 +7,13 @@ layout: layout.html
 
 ## User groups
 
-This depends on what [Authenticator Module](/manual/auth/module) is used.
+This depends on what [Authenticator Module](/manual/auth/modules) is used.
 
 ---
 
 ## Blacklisting packages
 
-This depends on what [Authenticator Module](/manual/auth/module) is used.
+This depends on what [Storage Module](/manual/storage/modules) is used.
 
 ---
 

@@ -11,6 +11,8 @@ You can change the login behaviour of OS.js by changing the configuration to a m
 
 For demonstration purposes. Does not do any actual athentication and has no restrictions.
 
+*Please note that this module has no support for user management.*
+
 ---
 
 ## Mysql
@@ -106,3 +108,5 @@ $ grunt build:config
 **NOTE:** On some systems you might have to install `authenticate-pam` with `npm install -g` or else you might get a *Error in service module* upon request.
 
 **NOTE:** Also, on some systems you might have to run OS.js server as an administrator (`sudo`) depending on the PAM setup.
+
+**NOTE:** This module has no support for user management at the moment. You'll have to use the system tools.*
