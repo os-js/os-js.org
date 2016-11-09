@@ -1,5 +1,5 @@
 
-build: node_modules static jsdoc redirects
+build: node_modules static jsdoc redirects robots
 
 static:
 	node index.js
@@ -15,7 +15,9 @@ jsdoc:
 
 redirects:
 	node make-redirects.js
-	cp -r 302/* build/
+
+robots:
+	node make-robots.js
 
 node_modules: package.json
 	npm install

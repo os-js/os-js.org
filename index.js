@@ -6,6 +6,7 @@ const less = require('metalsmith-less')
 const ignore = require('metalsmith-ignore');
 const watch = require('metalsmith-watch');
 const metalsmithPrism = require('metalsmith-prism');
+const sitemap = require('metalsmith-sitemap');
 
 const handlebars = require('handlebars');
 handlebars.registerHelper('startsWith', function(prefix, str, options) {
@@ -39,6 +40,10 @@ var i = Metalsmith(__dirname)
   ]))
   .use(layouts({
     engine: 'handlebars'
+  }))
+  .use(sitemap({
+    hostname: "https://os.js.org",
+    omitIndex: true
   }));
 
 if ( process.argv[2] === '--watch' ) {
