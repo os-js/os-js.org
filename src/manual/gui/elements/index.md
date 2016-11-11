@@ -41,11 +41,25 @@ GUI Elements are comprised of regular HTML, JavaScript and CSS.
 ## Creating elements programatically
 
 ```js
+//
+// Normal
+//
+var el = GUI.Element.create('gui-element-name', {
+  parameter: 'value'
+});
+parentElement.append(el);
+
+//
+// Via Scheme
+//
 scheme.create(win, 'gui-element-name', {
   parameter: 'value'
 }, parentElement);
 
-parentElement.appendHTML('<gui-element-name></gui-element-name>', optionalSchemeReference, optionalWinReference);
+//
+// Using HTML
+//
+parentElement.appendHTML('<gui-element-name></gui-element-name>', optionalWinReference);
 ```
 
 ## Creating your own GUI elements
