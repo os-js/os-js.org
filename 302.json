@@ -176,6 +176,7 @@
   ],
 
   "manuals": [
+    "index.html",
     "man-configuration.html",
     "man-dropbox.html",
     "man-windows-live-api.html",
@@ -198,6 +199,7 @@
   ],
 
   "tutorials": [
+    "index.html",
     "gui.html",
     "application-with-server-api.html",
     "using-thirdparty.html",

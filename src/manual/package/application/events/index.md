@@ -43,7 +43,7 @@ You can broadcast messages to all applications (that will emit an event in your 
 API.message('foo', {bar: 'baz'})
 
 // If you send your application ID as a source, it will not be triggered in that application.
-API.message('foo', {bar: 'baz'}, {source: app.__pid})
+API.message('foo', {bar: 'baz'}, {source: app})
 ```
 
 Ref: https://os.js.org/doc/client/OSjs.Core.Process.html#_onMessage
