@@ -1,5 +1,5 @@
 
-build: node_modules static jsdoc redirects robots
+build: node_modules static jsdoc redirects robots installer
 
 static:
 	node index.js
@@ -18,6 +18,9 @@ redirects:
 
 robots:
 	node make-robots.js
+
+installer:
+	cp OS.js/src/installer/installer.sh src/installer
 
 node_modules: package.json
 	npm install
