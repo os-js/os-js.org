@@ -170,7 +170,7 @@ You can make your own server-side API methods for your applications. These are d
 
 You can read about the arguments in the [server API documentation](/doc/server).
 ```js
-test: function(instance, http, resolve, reject, args) {
+test: function(env, http, resolve, reject, args) {
   resolve('This is a response from your application');
 }
 
