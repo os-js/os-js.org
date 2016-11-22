@@ -7,26 +7,20 @@ layout: layout.html
 
 You can install [node supervisor](https://github.com/petruisfan/node-supervisor) and the development (dist-dev) server will automatically reload on change.
 
-## NIX
+## Starting
 
 ```bash
-# Start production server
-$ ./bin/start-dist.sh
+# All platforms
+$ node osjs run --target=dist      # Start production server
+$ node osjs run --target=dist-dev  # Start development server
 
-# Start development server
-$ ./bin/start-dev.sh
-```
+# Alternative way, NIX
+$ ./bin/start-dist.sh  # Start production server
+$ ./bin/start-dev.sh   # Start development server (supports watching)
 
----
-
-## Windows
-
-```bash
-# Start production server
-$ bin\win-start-dist
-
-# Start development server
-$ bin\win-start-dev
+# Alternative way, Windows
+$ bin\win-start-dist   # Start production server
+$ bin\win-start-dev    # Start development server (supports watching)
 ```
 
 ---
