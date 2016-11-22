@@ -172,7 +172,9 @@
     "srcclientjavascriptdialogsfileinfojs.html",
     "srcclientjavascriptvfsmountslocalstoragejs.html",
     "srcclientjavascriptvfsmountsdropboxjs.html",
-    "srcclientjavascripthelpersiframe-applicationjs.html"
+    "srcclientjavascripthelpersiframe-applicationjs.html",
+
+    "OSjs.Handlers.html"
   ],
 
   "manuals": [

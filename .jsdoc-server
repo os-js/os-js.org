@@ -2,6 +2,11 @@
   "source": {
     "include": ["OS.js/src/server/node/"],
     "recurse": true,
-    "excludePattern": ["example.js", "test.js"]
+    "exclude": [
+      "OS.js/src/server/node/modules/vfs/test.js",
+      "OS.js/src/server/node/modules/vfs/example.js",
+      "OS.js/src/server/node/modules/auth/test.js",
+      "OS.js/src/server/node/modules/auth/example.js"
+    ]
   }
 }
