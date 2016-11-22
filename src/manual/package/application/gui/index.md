@@ -68,9 +68,12 @@ this._find('MyButtonOne').on('click', function() {
 });
 
 // Create UI element programatically (chainable)
-scheme.create(this, 'gui-button', {disabled: true}, root).on('click', function() { // or `this._scheme`
+this._create('gui-button', {disabled: true}, root);
 
-});
+
+// Alternate methods:
+scheme.create(this, 'gui-button', {}, root)
+scheme.find(this, 'MyButtonOne');
 
 ```
 

@@ -68,6 +68,7 @@ drop:file     When a internal file object was dropped   => (ev, VFS.File, args)
 ._off('event'); // Unsubscribe to an event (you can pass the callback as second argument)
 ._emit('event', [arg, ...]); // Emit an event
 ._find('id'); // Finds GUI Element with given "data-id="
+._create('element', {}, parentNode); // Create a new GUI element with given parameters and parent
 ```
 
 For more information see the [API documentation](https://os.js.org/doc/client/OSjs.Core.Window.html).
