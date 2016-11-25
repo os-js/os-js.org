@@ -5,10 +5,10 @@ layout: layout.html
 
 # WebSocket Connection
 
-With websockets you get much better performance when communicating with the APIs.
+You can enable WebSocket backend communication by updating the connection value. This will improve performance and allow for full-duplex communication.
 
 ```bash
-$ grunt config:set --name=connection --type=ws
+$ grunt config:set --name=connection --value=ws
 $ grunt build:config
 ```
 
