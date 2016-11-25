@@ -7,6 +7,20 @@ layout: layout.html
 
 You can use these tasks via `node osjs <task>`.
 
+## Misc Tasks
+
+Available targets: `dist`, `dist-dev` (default is `dist-dev`).
+
+| Task             | Arguments                                            | Description                                |
+| ---------------- | ---------------------------------------------------- | ------------------------------------------ |
+| run              | `--target=TARGET (--loglevel=N) (--port=N)`          | Runs OS.js node server                     |
+
+### Examples
+
+```bash
+$ node osjs run
+```
+
 ## Build Tasks
 
 Available targets: `dist`, `dist-dev` (default is both. Exception is for `build:config`, which uses targets from configuration section below)
