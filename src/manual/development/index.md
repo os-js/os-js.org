@@ -23,7 +23,7 @@ $ cd OS.js
 
 # Install all dependencies and extra testing suite
 $ npm install
-$ npm install -g mocha
+$ sudo npm install -g grunt-cli mocha
 
 # Build everything
 $ grunt
