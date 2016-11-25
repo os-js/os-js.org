@@ -17,4 +17,3 @@ Handles requests from the client in a couple of ways:
 
 - [Node](/manual/server/node)
 - [PHP](/manual/server/php)
-- [Web servers](/manual/server/webserver)
