@@ -23,7 +23,7 @@ In this example we use the default HTTP backend, but modify the API request:
   MyConnection.constructor = _super;
 
   // An example method for adding headers to the requests
-  MyConnection.prototype._request = function(isVfs, method, args, options, onsuccess, onerror) {
+  MyConnection.prototype.request = function(method, args, onsuccess, onerror, options) {
     options = options || {};
 
     // See 'Utils.ajax()' for more info
@@ -32,7 +32,7 @@ In this example we use the default HTTP backend, but modify the API request:
     };
 
     // Let the base class finish the job
-    return _super.prototype._request.call(isVfs, method, args, options, cbSuccess, cbError);
+    return _super.prototype.request.call(method, args, options, onsuccess, onerror);
   };
 
 })(OSjs.Connections.http);
