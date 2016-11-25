@@ -98,11 +98,7 @@ $ node osjs config:set --name=authenticator --value=pam
 $ node osjs config:set --name=client.ReloadOnShutdown --value=true
 
 # Update configuration and template files
-$ node osjs build:config
-
-# Rebuild (only required if you use `dist`)
-# grunt build:core --target=dist
-
+$ node osjs build:config build:core
 ```
 
 **NOTE:** On some systems you might have to install `authenticate-pam` with `npm install -g` or else you might get a *Error in service module* upon request.
