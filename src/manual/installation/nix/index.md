@@ -29,11 +29,10 @@ $ curl -sS https://os.js.org/installer | sh
 Or manually (recommended):
 
 ```bash
-$ sudo npm install -g grunt-cli
 $ git clone https://github.com/os-js/OS.js.git
 $ cd OS.js
 $ npm install --production
-$ grunt
+$ node osjs build
 ```
 
 You can download and extract a zip-file instead of using `git`, but is not recommended as it makes the update process harder.

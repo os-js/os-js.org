@@ -15,7 +15,7 @@ See the [Build Commands](/manual/build/cli) page for more information about envi
 
 ```bash
 # Set your timezone manually
-$ grunt config:set --name=tz --value=Europe/Oslo
+$ node osjs config:set --name=tz --value=Europe/Oslo
 ```
 
 ---
@@ -32,9 +32,9 @@ See the [Build Commands](/manual/build/cli) page for more information about sett
 
 
 ```bash
-$ grunt config:set:themes.styleBase:"custom.less"
+$ node osjs config:set:themes.styleBase:"custom.less"
 $ edit src/client/stylesheets/custom.less
-$ grunt build:themes build:config
+$ node osjs build:themes build:config
 ```
 
 #### Example file
@@ -53,11 +53,11 @@ $ edit src/templates/dist/default/index.html
 
 # Alternative 2 (recomended):
 $ cp -r src/templates/dist/default src/templates/dist/mytemplate
-$ grunt config:set --name=build.dist.template --value=mytemplate
+$ node osjs config:set --name=build.dist.template --value=mytemplate
 $ edit src/templates/dist/mytemplate/index.html
 
 # Rebuild
-$ grunt build:core
+$ node osjs build:core
 ```
 
 ### Add to build
@@ -67,7 +67,7 @@ See `src/conf/500-build.json` for example on how to add to build process.
 ### Add to boot
 
 ```bash
-$ grunt config:add-preload --name=FOO --path=PATH
+$ node osjs config:add-preload --name=FOO --path=PATH
 ```
 
 ### Add to package
@@ -123,15 +123,15 @@ Utils.preload(list, function() {
 
 ```bash
 $ git clone --recursive https://github.com/username/package-repository src/packages/package-repository
-$ grunt config:add-repository --name=package-repository
-$ grunt build:manifest build:packages
+$ node osjs config:add-repository --name=package-repository
+$ node osjs build:manifest build:packages
 ```
 
 ### Removing a repository
 
 ```bash
-$ grunt config:remove-repository --name=package-repository
-$ grunt build:manifest
+$ node osjs config:remove-repository --name=package-repository
+$ node osjs build:manifest
 ```
 
 ### Enable or Disable a spesific package
@@ -140,13 +140,13 @@ Most packages are enabled by default, but in some cases, like with `Broadway` yo
 
 ```bash
 # Enable
-grunt config:enable-package --name=REPO/PACKAGENAME
+$ node osjs config:enable-package --name=REPO/PACKAGENAME
 
 # Disable
-grunt config:disable-package --name=REPO/PACKAGENAME
+$ node osjs config:disable-package --name=REPO/PACKAGENAME
 
 # Update manifest
-grunt build:config build:manifest
+$ node osjs build:config build:manifest
 ```
 
 ---

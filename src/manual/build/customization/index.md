@@ -17,8 +17,8 @@ The base template contains the index HTML file and any assets it uses. Simply ma
 
 ```bash
 $ cp -r src/templates/dist/default src/templates/dist/mytemplate
-$ grunt config:set --name=build.dist.template --value=mytemplate
-$ grunt build
+$ node osjs config:set --name=build.dist.template --value=mytemplate
+$ node osjs build
 ```
 
 ## Login Screen
@@ -29,6 +29,6 @@ The actual interaction code is in the *Authenticator*.
 
 ```bash
 $ cp -r src/templates/dist/login/default.html src/templates/dist/login/mytemplate.html
-$ grunt config:set --name=build.dist.layout --value=mytemplate
-$ grunt build
+$ node osjs config:set --name=build.dist.layout --value=mytemplate
+$ node osjs build
 ```

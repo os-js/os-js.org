@@ -13,8 +13,8 @@ In addition to [Authenticators](/manual/auth), OS.js uses a Storage module for s
 This module only saves the data in the *Browser* using `LocalStorage`.
 
 ```bash
-$ grunt config:set --name=storage --value=demo
-$ grunt build:config build:core
+$ node osjs config:set --name=storage --value=demo
+$ node osjs build:config build:core
 
 ```
 
@@ -25,12 +25,12 @@ $ grunt build:config build:core
 Stores the data in a Mysql database. See the [Authenticators](/manual/auth) documentation on how to set up the database and its users.
 
 ```bash
-$ grunt config:set --name=storage --value=mysql
-$ grunt config:set --name=server.modules.storage.mysql.host --value=localhost
-$ grunt config:set --name=server.modules.storage.mysql.user --value=osjsuser
-$ grunt config:set --name=server.modules.storage.mysql.password --value=osjspassword
-$ grunt config:set --name=server.modules.storage.mysql.database --value=osjs
-$ grunt build:config build:core
+$ node osjs config:set --name=storage --value=mysql
+$ node osjs config:set --name=server.modules.storage.mysql.host --value=localhost
+$ node osjs config:set --name=server.modules.storage.mysql.user --value=osjsuser
+$ node osjs config:set --name=server.modules.storage.mysql.password --value=osjspassword
+$ node osjs config:set --name=server.modules.storage.mysql.database --value=osjs
+$ node osjs build:config build:core
 ```
 
 ---
@@ -40,8 +40,8 @@ $ grunt build:config build:core
 Stores the data in the filesystem.
 
 ```bash
-$ grunt config:set --name=storage --value=system
-$ grunt build:config build:core
+$ node osjs config:set --name=storage --value=system
+$ node osjs build:config build:core
 ```
 
 ### groups.json

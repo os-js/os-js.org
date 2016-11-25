@@ -10,10 +10,10 @@ Your standard package. Contains ready-to-go code to develop your own Application
 ## Create Package
 
 ```bash
-$ grunt generate:package --name=default/MyName
+$ node osjs generate:package --name=default/MyName
 
 # Simple type without prototypes
-$ grunt generate:package --name=default/MyName --type=simple
+$ node osjs generate:package --name=default/MyName --type=simple
 ```
 
 ---
@@ -31,5 +31,5 @@ $ grunt generate:package --name=default/MyName --type=simple
 ## Building and installation
 
 ```bash
-$ grunt build:manifest buid:config build:package --name=default/MyName
+$ node osjs build:manifest buid:config build:package --name=default/MyName
 ```

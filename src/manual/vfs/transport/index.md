@@ -15,9 +15,9 @@ Create a new project, then find the "Credentials" menu and make a new OAuth Clie
 **Only works over HTTPS**
 
 ```bash
-$ grunt config:set --name=client.GoogleAPI.ClientId --value=YOUR_CLIENT_ID
-$ grunt config:set --name=client.VFS.GoogleDrive.Enabled --value=true
-$ grunt build:config
+$ node osjs config:set --name=client.GoogleAPI.ClientId --value=YOUR_CLIENT_ID
+$ node osjs config:set --name=client.VFS.GoogleDrive.Enabled --value=true
+$ node osjs build:config
 ```
 
 ---
@@ -29,9 +29,9 @@ First you have to create [API Credentials](https://msdn.microsoft.com/en-us/libr
 Set your redirect URL to `http://your-host/vendor/wlOauthReceiver.html`.
 
 ```bash
-$ grunt config:set --name=client.WindowsLiveAPI.ClientId --value=YOUR_CLIENT_ID
-$ grunt config:set --name=client.VFS.OneDrive.Enabled --value=true
-$ grunt build:config
+$ node osjs config:set --name=client.WindowsLiveAPI.ClientId --value=YOUR_CLIENT_ID
+$ node osjs config:set --name=client.VFS.OneDrive.Enabled --value=true
+$ node osjs build:config
 ```
 
 ---
@@ -48,10 +48,10 @@ $ git clone https://github.com/dropbox/dropbox-js.git vendor/dropbox-js
 # You may have to build dropbox.js manually before continuing
 # Windows users: You'd have to use resolve the symlinks in "dist/vendor"
 
-$ grunt config:set --name=client.DropboxAPI.ClientKey --value=YOUR_CLIENT_KEY
-$ grunt config:set --name=client.VFS.Dropbox.Enabled --value=true
-$ grunt config:add-preload name=dropbox --path=/vendor/dropbox.js
-$ grunt build:config
+$ node osjs config:set --name=client.DropboxAPI.ClientKey --value=YOUR_CLIENT_KEY
+$ node osjs config:set --name=client.VFS.Dropbox.Enabled --value=true
+$ node osjs config:add-preload name=dropbox --path=/vendor/dropbox.js
+$ node osjs build:config
 ```
 
 ---

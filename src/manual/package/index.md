@@ -148,7 +148,7 @@ You can also spawn other node.js processes when the OS.js server starts:
 
 ## LESS Support
 
-Simply add this to the metadata file and the file is built whenever the `grunt build:package` task is run.
+Simply add this to the metadata file and the file is built whenever the `node osjs build:package` task is run.
 
 ```json
 {

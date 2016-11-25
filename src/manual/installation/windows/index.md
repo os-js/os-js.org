@@ -25,12 +25,11 @@ Download and run https://os.js.org/installer.exe.
 **IMPORTANT** Run `cmd` as *Administrator*:
 
 ```bash
-$ npm install -g grunt-cli
 $ git clone https://github.com/os-js/OS.js.git
 $ cd OS.js
 $ npm install --production
 $ bin\create-windows-symlinks
-$ grunt --force
+$ node osjs build
 ```
 
 You can download and extract a zip-file instead of using `git`, but is not recommended as it makes the update process harder.

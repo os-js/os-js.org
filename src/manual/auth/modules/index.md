@@ -26,17 +26,17 @@ This is just a simple database backend that authorizes login attempts via mysql.
 $ npm install mysql bcryptjs
 
 # Change the configured authenticator and its options
-$ grunt config:set --name=authenticator --value=mysql
-$ grunt config:set --name=server.modules.auth.mysql.host --value=localhost
-$ grunt config:set --name=server.modules.auth.mysql.user --value=osjsuser
-$ grunt config:set --name=server.modules.auth.mysql.password --value=osjspassword
-$ grunt config:set --name=server.modules.auth.mysql.database --value=osjs
+$ node osjs config:set --name=authenticator --value=mysql
+$ node osjs config:set --name=server.modules.auth.mysql.host --value=localhost
+$ node osjs config:set --name=server.modules.auth.mysql.user --value=osjsuser
+$ node osjs config:set --name=server.modules.auth.mysql.password --value=osjspassword
+$ node osjs config:set --name=server.modules.auth.mysql.database --value=osjs
 
 # Make OS.js reload after you log out
-$ grunt config:set --name=client.ReloadOnShutdown --value=true
+$ node osjs config:set --name=client.ReloadOnShutdown --value=true
 
 # Rebuild
-$ grunt build:config build:core
+$ node osjs build:config build:core
 
 # Set up database
 $ mysql -u root -p
@@ -92,13 +92,13 @@ $ edit /etc/osjs/groups.json
 $ edit /etc/osjs/blacklist.json
 
 # Change the configured authenticator (or use "shadow" here)
-$ grunt config:set --name=authenticator --value=pam
+$ node osjs config:set --name=authenticator --value=pam
 
 # Make OS.js reload after you log out
-$ grunt config:set --name=client.ReloadOnShutdown --value=true
+$ node osjs config:set --name=client.ReloadOnShutdown --value=true
 
 # Update configuration and template files
-$ grunt build:config
+$ node osjs build:config
 
 # Rebuild (only required if you use `dist`)
 # grunt build:core --target=dist

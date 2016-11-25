@@ -65,7 +65,7 @@ These rules are checked with `val <= window_width`.
 }
 ```
 
-Run `grunt build:config` if you change these settings.
+Run `node osjs build:config` if you change these settings.
 
 ### Base CSS
 

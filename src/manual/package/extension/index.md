@@ -10,7 +10,7 @@ This package is used to extend both the client- and server APIs.
 ## Create Package
 
 ```bash
-$ grunt generate:package --name=default/MyName --type=extension
+$ node osjs generate:package --name=default/MyName --type=extension
 ```
 
 ---
@@ -25,5 +25,5 @@ $ grunt generate:package --name=default/MyName --type=extension
 ## Building and installation
 
 ```bash
-$ grunt build:manifest buid:config build:package --name=default/MyName
+$ node osjs build:manifest buid:config build:package --name=default/MyName
 ```

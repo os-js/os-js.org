@@ -14,7 +14,7 @@ $ cp -r src/client/themes/styles/default src/client/themes/styles/mytheme
 $ edit src/client/themes/styles/mytheme/metadata.json
 $ edit src/client/themes/styles/mytheme/style.less
 $ edit src/conf/112-themes.json # Or create your own file
-$ grunt build:config build:theme --style=mytheme
+$ node osjs build:config build:theme --style=mytheme
 ```
 
 ### Icons
@@ -23,7 +23,7 @@ $ grunt build:config build:theme --style=mytheme
 $ cp -r src/client/themes/icons/default src/client/themes/icons/mytheme
 $ edit src/client/themes/icons/mytheme/metadata.json
 $ edit src/conf/112-themes.json # Or create your own file
-$ grunt build:config build:themes
+$ node osjs build:config build:themes
 ```
 
 ### Sounds
@@ -32,7 +32,7 @@ $ grunt build:config build:themes
 $ cp -r src/client/themes/sounds/default src/client/themes/sound/mytheme
 $ edit src/client/themes/sound/mytheme/metadata.json
 $ edit src/conf/112-themes.json # Or create your own file
-$ grunt build:config build:theme --static
+$ node osjs build:config build:theme --static
 ```
 
 ### Fonts
@@ -41,7 +41,7 @@ See the included font theme for an example on how to set up.
 
 ```bash
 $ edit src/conf/112-themes.json # Or create your own file
-$ grunt build:config buid:theme --fonts
+$ node osjs build:config buid:theme --fonts
 ```
 
 ---

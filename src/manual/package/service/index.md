@@ -10,7 +10,7 @@ Works almost like an application, only it starts up when a user logs in and "run
 ## Create Package
 
 ```bash
-$ grunt generate:package --name=default/MyName --type=service
+$ node osjs generate:package --name=default/MyName --type=service
 ```
 
 ---
@@ -25,5 +25,5 @@ $ grunt generate:package --name=default/MyName --type=service
 ## Building and installation
 
 ```bash
-$ grunt build:manifest buid:config build:package --name=default/MyName
+$ node osjs build:manifest buid:config build:package --name=default/MyName
 ```

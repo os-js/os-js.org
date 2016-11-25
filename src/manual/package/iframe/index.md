@@ -10,7 +10,7 @@ An application that loads its sources via iframe.
 ## Create Package
 
 ```bash
-$ grunt generate:package --name=default/MyPackageName --type=iframe
+$ node osjs generate:package --name=default/MyPackageName --type=iframe
 ```
 
 ---
@@ -39,5 +39,5 @@ You can communicate between OS.js and your IFrame application using the browser 
 ## Building and installation
 
 ```bash
-$ grunt build:manifest buid:config build:package --name=default/MyName
+$ node osjs build:manifest buid:config build:package --name=default/MyName
 ```

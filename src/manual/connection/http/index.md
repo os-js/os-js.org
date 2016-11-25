@@ -10,8 +10,8 @@ OS.js runs on HTTP and by default uses XHR requests for communication (aka AJAX)
 ## HTTP
 
 ```bash
-$ grunt config:set --name=server.http.mode --value=http
-$ grunt build:config
+$ node osjs config:set --name=server.http.mode --value=http
+$ node osjs build:config
 ```
 
 ---
@@ -24,9 +24,9 @@ Create your certificates and place them in `src/server/` (as ex "server.key" and
 
 ```bash
 $ npm install http2
-$ grunt config:set --name=server.http.mode --value=http2
-$ grunt config:set --name=server.http.cert.name --value=server
-$ grunt build:config
+$ node osjs config:set --name=server.http.mode --value=http2
+$ node osjs config:set --name=server.http.cert.name --value=server
+$ node osjs build:config
 ```
 
 ---
@@ -38,7 +38,7 @@ Create your certificates and place them in `src/server/` (as ex "server.key" and
 *If you run behind a proxy you should manage this there instead.*
 
 ```bash
-$ grunt config:set --name=server.http.mode --value=https
-$ grunt config:set --name=server.http.cert.name --value=server
-$ grunt build:config
+$ node osjs config:set --name=server.http.mode --value=https
+$ node osjs config:set --name=server.http.cert.name --value=server
+$ node osjs build:config
 ```

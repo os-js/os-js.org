@@ -15,10 +15,10 @@ To create your own mountpoints you can use the included configuration tool:
 
 ```bash
 # Add with the built in shortcut
-grunt config:add-mount --name=data --description="My data files" --path=/tmp
+$ node osjs config:add-mount --name=data --description="My data files" --path=/tmp
 
 # Update configuration
-grunt build:config
+$ node osjs build:config
 ```
 
 This will create the mountpoint `data://` and points to `/tmp` on the server. For group permissions, see [here](/manual/auth/permission).

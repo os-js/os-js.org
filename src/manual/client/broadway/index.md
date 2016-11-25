@@ -12,8 +12,8 @@ This is [not ready](https://github.com/os-js/OS.js/issues/29) for production usa
 ## Enable
 
 ```bash
-$ grunt config:enable-package --name=Broadway
-$ grunt build:config build:manifest build:core
+$ node osjs config:enable-package --name=Broadway
+$ node osjs build:config build:manifest build:core
 ```
 
 ## Set up X server
