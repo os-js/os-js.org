@@ -21,6 +21,7 @@ robots:
 
 installer:
 	cp OS.js/src/installer/installer.sh src/installer
+	cp OS.js/src/installer/installer.ps1 src/installer.ps1
 
 node_modules: package.json
 	npm install
