@@ -27,7 +27,7 @@ The namespace Applications are loaded into.
 
 Collection of Authenticators included.
 
-[API Documentation](https://os.js.org/doc/client/OSjs.Auth.html)
+[API Documentation](https://os.js.org/doc/client/OSjs.Authenticator.html)
 
 ---
 
@@ -79,7 +79,7 @@ All the translations.
 
 Colletion of Storage modules included.
 
-[API Documentation](https://os.js.org/doc/client/OSjs.Storage.html)
+[API Documentation](https://os.js.org/doc/client/OSjs.Core.Storage.html)
 
 ---
 

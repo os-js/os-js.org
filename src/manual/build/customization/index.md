@@ -9,7 +9,7 @@ You can customize base settings using the built-in [commands](/manual/build/cli)
 
 ## General
 
-To add your own styles (to also override) and files etc. simply use one of the methods [described here](manual/configuration/#assets).
+To add your own styles (to also override) and files etc. simply use one of the methods [described here](/manual/configuration/#assets).
 
 ## Base Template
 

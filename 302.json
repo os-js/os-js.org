@@ -120,6 +120,8 @@
     "srcjavascriptguiscrollviewjs.html",
     "srcclientjavascriptguitextjs.html",
     "srcclientjavascripthelpersfirefox-marketplacejs.html",
+    "srcjavascripthelpersfirefox-marketplacejs.html",
+    "srcjavascriptsessionjs.html",
     "srcclientjavascriptvfsuserjs.html",
     "srcclientjavascriptguimiscjs.html",
     "srcclientjavascripthandlerjs.html",
@@ -173,7 +175,9 @@
     "srcclientjavascriptvfsmountslocalstoragejs.html",
     "srcclientjavascriptvfsmountsdropboxjs.html",
     "srcclientjavascripthelpersiframe-applicationjs.html",
+    "srcjavascriptvfsjs.html",
 
+    "OSjs.Dialogs.html",
     "OSjs.Handlers.html"
   ],
 
