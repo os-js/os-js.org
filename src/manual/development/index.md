@@ -26,7 +26,7 @@ $ npm install
 $ sudo npm install -g grunt-cli mocha
 
 # Build everything
-$ grunt
+$ node osjs build
 
 # Optionally run watch to automatically rebuild client files upon changes.
 $ grunt watch
@@ -80,7 +80,7 @@ $ git checkout -b issue-XXX
 $ edit src/client/javascript/init.js
 
 # Rebuild everything
-$ grunt
+$ node osjs build
 
 # Run tests
 $ grunt test
