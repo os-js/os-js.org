@@ -30,6 +30,10 @@
     <header>
       <div id="Logo"></div>
       <nav>
+        <form method="get" action="https://www.google.com/search" id="Search">
+          <input type="text" name="q" id="SearchQuery" placeholder="Search with Google" />
+        </form>
+
         <a href="/">Home</a>
         <a href="/manual" {{#startsWith "manual" this.path}}class="active"{{/startsWith}}>Manual</a>
         <a href="/doc" {{#startsWith "doc" this.path}}class="active"{{/startsWith}}>Documentation</a>
@@ -259,6 +263,18 @@
       };
     </script>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+    <script>
+document.getElementById('Search').onsubmit = function(ev) {
+  ev.preventDefault();
+
+  var v = document.getElementById('SearchQuery').value;
+  var q = 'site:os.js.org ' + encodeURIComponent(String(v));
+  window.location = 'https://google.com/search?q=' + q;
+
+  return false;
+};
+    </script>
 
   </body>
 </html>

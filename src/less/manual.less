@@ -148,6 +148,7 @@ header {
   }
     header > nav > a {
       display : inline-block;
+      vertical-align : middle;
       color : #fff;
       position : relative;
       padding : 10px;
@@ -164,6 +165,31 @@ header {
       header > nav > a:hover:before {
         opacity : .4;
       }
+
+    header > nav > form {
+      display : inline-block;
+      vertical-align : middle;
+      position : relative;
+      margin-left : .9em;
+      margin-right : 2em;
+      width : 16em;
+    }
+
+    header > nav > form > input {
+      outline : none;
+      margin : 0;
+      padding : 0;
+      height : 100%;
+      width : 100%;
+      padding : 10px;
+      padding-left : 20px;
+      padding-right : 20px;
+      box-sizing : border-box;
+      border : 0 none;
+      background-color : #fff;
+      border-radius : 2px;
+      font-size : inherit;
+    }
 
     header > nav > a.active {
       font-weight : bold;
