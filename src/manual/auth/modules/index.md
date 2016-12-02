@@ -22,8 +22,12 @@ This is just a simple database backend that authorizes login attempts via mysql.
 **Also set up the [Mysql storage](/manual/storage/modules/#mysql) module for this to work as intended.**
 
 ```bash
-# Install node dependency
+# Install node dependencies
 $ npm install mysql bcryptjs
+
+# Or if you use PHP, install Composer, then run:
+$ cd src/server/php
+$ composer install
 
 # Change the configured authenticator and its options
 $ node osjs config:set --name=authenticator --value=mysql

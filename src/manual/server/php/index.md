@@ -5,6 +5,23 @@ layout: layout.html
 
 # PHP Server
 
+## Dependencies
+
+Some included modules might require third party libraries in order to work correctly.
+
+You can install these using [Composer](https://getcomposer.org):
+
+```bash
+# Enter the PHP server directory first
+$ cd src/server/php
+
+# Using Composer installed on your system:
+$ composer install
+
+# Or if you downloaded composer inside this directory:
+$ php composer.phar install
+```
+
 ## NIX
 
 ```bash
