@@ -5,10 +5,6 @@ layout: layout.html
 
 # Connection Example
 
-## Server
-
-See the [included example](https://github.com/os-js/OS.js/blob/master/src/server/node/modules/connection/example.js) for a full template.
-
 ## Client
 
 In this example we use the default HTTP backend, but modify the API request:
