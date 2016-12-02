@@ -6,7 +6,6 @@ const destination = _path.join(__dirname, 'build/robots.txt');
 
 var list = [
   'test',
-  'manual',
   'windows-installer.cmd',
   'windows-installer.ps1',
   'installer.exe',
