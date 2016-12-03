@@ -37,7 +37,7 @@ $ cp src/templates/misc/authstorage.sqlite src/server/
 # Rebuild
 $ node osjs build
 
-# Now add yourself as a user
+# Now add yourself as an admin
 $ node bin/add-user.js add anders admin
 $ mkdir vfs/home/anders
 ```
@@ -76,9 +76,9 @@ mysql> GRANT ALL PRIVILEGES ON osjs.* TO osjsuser@localhost;
 # Then set up database tables
 $ mysql -h localhost -u root -p osjs < src/templates/misc/authstorage.sql
 
-# And then add yourself a user
+# Now add yourself as an admin
 $ node bin/add-user.js add anders admin
-$ mkdir vfs/home/myadminaccount
+$ mkdir vfs/home/anders
 ```
 
 ---
