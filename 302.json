@@ -177,6 +177,7 @@
     "srcclientjavascripthelpersiframe-applicationjs.html",
     "srcjavascriptvfsjs.html",
 
+    "OSjs.Helpers.FirefoxMarketplace.html",
     "OSjs.Dialogs.html",
     "OSjs.Handlers.html"
   ],
