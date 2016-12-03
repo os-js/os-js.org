@@ -67,22 +67,14 @@ $ node osjs config:set --name=client.ReloadOnShutdown --value=true
 $ node osjs build:config build:core
 
 # Set up database
-$ mysql -u root -p
+$ mysql -h localhost -u root -p
 
 mysql> CREATE DATABASE osjs;
 mysql> GRANT USAGE ON *.* TO osjsuser@localhost IDENTIFIED BY 'osjspassword';
 mysql> GRANT ALL PRIVILEGES ON osjs.* TO osjsuser@localhost;
 
 # Then set up database tables
-mysql> CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `groups` text,
-  `settings` text,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+$ mysql -h localhost -u root -p osjs < src/templates/misc/authstorage.sql
 
 # And then add yourself a user
 $ node bin/add-user.js add anders admin

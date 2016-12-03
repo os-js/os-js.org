@@ -22,7 +22,9 @@ $ node osjs build:config build:core
 
 ## Database
 
-Stores the data in a database. See the [Authenticators](/manual/auth) documentation on how to set up the database and its users.
+Stores user data in a database.
+
+**See the [Authenticators](/manual/auth) documentation on how to set up the database and its users.**
 
 ### Sqlite
 
@@ -30,9 +32,6 @@ Stores the data in a database. See the [Authenticators](/manual/auth) documentat
 $ node osjs config:set --name=storage --value=database
 $ node osjs config:set --name=server.modules.storage.database.driver --value=sqlite
 $ node osjs build:config build:core
-
-# If you have not done it already
-$ cp src/templates/misc/authstorage.sqlite src/server/
 ```
 
 ### Mysql
