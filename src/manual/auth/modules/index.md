@@ -15,26 +15,50 @@ For demonstration purposes. Does not do any actual athentication and has no rest
 
 ---
 
-## Mysql
+## Database
 
-This is just a simple database backend that authorizes login attempts via mysql.
+This is just a simple database backend that allows you to store your users (and settings etc.).
 
-**Also set up the [Mysql storage](/manual/storage/modules/#mysql) module for this to work as intended.**
+**Also set up the [Database Storage](/manual/storage/modules/#database) module for this to work as intended.**
+
+### Sqlite
+
+```bash
+# Install dependencies
+$ npm install sqlite3 bcryptjs
+
+# Set up configuration
+$ node osjs config:set --name=authenticator --value=database
+$ node osjs config:set --name=server.modules.auth.database.driver --value=sqlite
+
+# Set up database
+$ cp src/templates/misc/authstorage.sqlite src/server/
+
+# Rebuild
+$ node osjs build
+
+# Now add yourself as a user
+$ node bin/add-user.js add anders admin
+$ mkdir vfs/home/anders
+```
+
+### Mysql
 
 ```bash
 # Install node dependencies
 $ npm install mysql bcryptjs
 
-# Or if you use PHP, install Composer, then run:
+# If you are on PHP 5.5 or below (and you actually use the PHP backend):
 $ cd src/server/php
 $ composer install
 
 # Change the configured authenticator and its options
-$ node osjs config:set --name=authenticator --value=mysql
-$ node osjs config:set --name=server.modules.auth.mysql.host --value=localhost
-$ node osjs config:set --name=server.modules.auth.mysql.user --value=osjsuser
-$ node osjs config:set --name=server.modules.auth.mysql.password --value=osjspassword
-$ node osjs config:set --name=server.modules.auth.mysql.database --value=osjs
+$ node osjs config:set --name=authenticator --value=database
+$ node osjs config:set --name=server.modules.auth.database.driver --value=mysql
+$ node osjs config:set --name=server.modules.auth.database.mysql.host --value=localhost
+$ node osjs config:set --name=server.modules.auth.database.mysql.user --value=osjsuser
+$ node osjs config:set --name=server.modules.auth.database.mysql.password --value=osjspassword
+$ node osjs config:set --name=server.modules.auth.database.mysql.database --value=osjs
 
 # Make OS.js reload after you log out
 $ node osjs config:set --name=client.ReloadOnShutdown --value=true
@@ -63,34 +87,6 @@ mysql> CREATE TABLE IF NOT EXISTS `users` (
 # And then add yourself a user
 $ node bin/add-user.js add anders admin
 $ mkdir vfs/home/myadminaccount
-```
-
----
-
-## Sqlite
-
-This works almost like the Mysql module, except with sqlite.
-
-*This is only available for node at this moment.*
-
-**Also set up the [Sqlite storage](/manual/storage/modules/#sqlite) module for this to work as intended.**
-
-```bash
-# Install dependencies
-$ npm install sqlite3 bcryptjs
-
-# Set up configuration
-$ node osjs config:set --name=authenticator --value=sqlite
-
-# Set up database
-$ cp src/templates/misc/authstorage.sqlite src/server/
-
-# Rebuild
-$ node osjs build
-
-# Now add yourself as a user
-$ node bin/add-user.js add anders admin
-$ mkdir vfs/home/anders
 ```
 
 ---
