@@ -31,6 +31,7 @@ $ node osjs config:set --name=server.modules.storage.mysql.user --value=osjsuser
 $ node osjs config:set --name=server.modules.storage.mysql.password --value=osjspassword
 $ node osjs config:set --name=server.modules.storage.mysql.database --value=osjs
 $ node osjs build:config build:core
+```
 
 ---
 

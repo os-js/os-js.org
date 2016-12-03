@@ -67,7 +67,7 @@ $ mkdir vfs/home/myadminaccount
 
 ---
 
-# Sqlite
+## Sqlite
 
 This works almost like the Mysql module, except with sqlite.
 
