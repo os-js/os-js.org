@@ -61,8 +61,36 @@ mysql> CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
 
 # And then add yourself a user
-$ node bin/mysql-user.js add anders admin
+$ node bin/add-user.js add anders admin
 $ mkdir vfs/home/myadminaccount
+```
+
+---
+
+# Sqlite
+
+This works almost like the Mysql module, except with sqlite.
+
+*This is only available for node at this moment.*
+
+**Also set up the [Sqlite storage](/manual/storage/modules/#sqlite) module for this to work as intended.**
+
+```bash
+# Install dependencies
+$ npm install sqlite3 bcryptjs
+
+# Set up configuration
+$ node osjs config:set --name=authenticator --value=sqlite
+
+# Set up database
+$ cp src/templates/misc/authstorage.sqlite src/server/
+
+# Rebuild
+$ node osjs build
+
+# Now add yourself as a user
+$ node bin/add-user.js add anders admin
+$ mkdir vfs/home/anders
 ```
 
 ---

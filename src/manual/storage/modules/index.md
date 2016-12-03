@@ -31,6 +31,19 @@ $ node osjs config:set --name=server.modules.storage.mysql.user --value=osjsuser
 $ node osjs config:set --name=server.modules.storage.mysql.password --value=osjspassword
 $ node osjs config:set --name=server.modules.storage.mysql.database --value=osjs
 $ node osjs build:config build:core
+
+---
+
+## Sqlite
+
+Stores the data in a Sqlite database. See the [Authenticators](/manual/auth) documentation on how to set up the database and its users.
+
+```bash
+$ node osjs config:set --name=storage --value=sqlite
+$ node osjs build:config build:core
+
+# If you have not done it already
+$ cp src/templates/misc/authstorage.sqlite src/server/
 ```
 
 ---
