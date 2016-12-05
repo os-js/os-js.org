@@ -1,5 +1,5 @@
 
-build: node_modules static jsdoc redirects robots installer
+build: node_modules static jsdoc
 
 static:
 	node index.js
@@ -12,16 +12,6 @@ jsdoc:
 	mkdir -p build/doc/client build/doc/server
 	jsdoc --debug -c .jsdoc-client -d ./build/doc/client/ -t layouts/jsdoc 2>/dev/null || :
 	jsdoc --debug -c .jsdoc-server -d ./build/doc/server/ -t layouts/jsdoc -r 2>/dev/null || :
-
-redirects:
-	node make-redirects.js
-
-robots:
-	node make-robots.js
-
-installer:
-	cp OS.js/src/installer/installer.sh src/installer
-	cp OS.js/src/installer/installer.ps1 src/installer.ps1
 
 node_modules: package.json
 	npm install

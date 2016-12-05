@@ -1,3 +1,6 @@
+const _fs = require('node-fs-extra');
+const _path = require('path');
+
 const Metalsmith = require('metalsmith');
 const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
@@ -44,12 +47,82 @@ var i = Metalsmith(__dirname)
   .use(sitemap({
     hostname: "https://os.js.org",
     omitIndex: true
-  }));
+  }))
+  .use(function(files, metalsmith, done) {
+    setImmediate(done);
+
+    const tree = JSON.parse(_fs.readFileSync('302.json'));
+    const root = _path.join(__dirname, 'build/');
+    const template = _fs.readFileSync(_path.join(__dirname, 'layouts/302.html')).toString();
+
+    Object.keys(tree).forEach(function(category) {
+      var url = 'https://os.js.org';
+
+      if ( ['_', 'manuals', 'tutorials'].indexOf(category) !== -1 ) {
+        url += '/manual';
+      } else {
+        url += '/doc/' + category;
+      }
+
+      tree[category].forEach(function(filename) {
+        const r = category === '_' ? '' : category;
+        const destination = _path.join(root, 'doc', r, filename);
+        const html = template.replace('%URL%', url);
+
+        try {
+          _fs.mkdirSync(_path.dirname(destination));
+        } catch ( e ) {}
+        _fs.writeFileSync(destination, html);
+      });
+    });
+
+  })
+  .use(function(files, metalsmith, done) {
+    setImmediate(done);
+
+    const tree = JSON.parse(_fs.readFileSync('302.json'));
+    const destination = _path.join(__dirname, 'build/robots.txt');
+
+    const list = [
+      'test',
+      'windows-installer.cmd',
+      'windows-installer.ps1',
+      'installer.exe',
+      'installer'
+    ];
+
+    Object.keys(tree).forEach(function(category) {
+      var url = '/doc/';
+      if ( category !== '_' ) {
+        url += category + '/';
+      }
+
+      tree[category].forEach(function(filename) {
+        list.push(url + filename);
+      });
+    });
+
+    var result = [
+      'User-agent: *'
+    ].concat(list.map(function(iter) {
+      return 'Disallow: ' + iter;
+    })).join('\n');
+
+    _fs.writeFileSync(destination, result);
+
+  })
+  .use(function(files, metalsmith, done) {
+    setImmediate(done);
+
+    _fs.copySync(_path.join(__dirname, 'OS.js/src/installer/installer.sh'), _path.join(__dirname, 'src/installer'));
+    _fs.copySync(_path.join(__dirname, 'OS.js/src/installer/installer.ps1'), _path.join(__dirname, 'src/installer.ps1'));
+  });
 
 if ( process.argv[2] === '--watch' ) {
   i.use(watch({
     paths: {
       "${source}/**/*": true,
+      "302.json": true,
       "layouts/**/*": "**/*"
     },
     livereload: true,
