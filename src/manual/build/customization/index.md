@@ -30,5 +30,15 @@ The actual interaction code is in the *Authenticator*.
 ```bash
 $ cp -r src/templates/dist/login/default.html src/templates/dist/login/mytemplate.html
 $ node osjs config:set --name=build.dist.layout --value=mytemplate
-$ node osjs build
+$ node osjs build:core
+```
+
+## Splash Screen
+
+To customize the login screen markup, just make a copy of the default and make any adjustments you want.
+
+```bash
+$ cp -r src/templates/dist/splash/default.html src/templates/dist/splash/mytemplate.html
+$ node osjs config:set --name=build.dist.layout --value=mytemplate
+$ node osjs build:core
 ```
