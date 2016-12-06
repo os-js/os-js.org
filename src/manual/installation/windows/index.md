@@ -32,10 +32,6 @@ $ bin\create-windows-symlinks
 $ node osjs build
 ```
 
-You can download and extract a zip-file instead of using `git`, but is not recommended as it makes the update process harder.
-
-- [YouTube setup instructions](https://www.youtube.com/watch?v=Cj3OdxTdGGc)
-
 ---
 
 ## Running
