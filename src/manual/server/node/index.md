@@ -33,15 +33,38 @@ You can use nginx to run behind a webserver to increase performance and security
 
 ### nginx
 
-See the included [nginx-node](https://github.com/os-js/OS.js/blob/master/doc/configs/nginx-node.conf) configuration file (for a very basic example)
+You can run behind nginx using a reverse-proxy:
+
+```
+server {
+    listen 80;
+
+    server_name osjs.local;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+```
 
 ### apache
 
-First you need to make sure these modules are enabled:
+You can also run behind Apache using a reverse-proxy:
 
 ```bash
 $ sudo a2enmod proxy
 $ sudo a2enmod proxy_http
 ```
 
-See the included [apache-node](https://github.com/os-js/OS.js/blob/master/doc/configs/apache-node.conf) configuration file (for a very basic example)
+```
+<VirtualHost *:80>
+  ServerName osjs.domain.no
+  ProxyPass / http://localhost:8000/
+</VirtualHost>
+```

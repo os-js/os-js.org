@@ -58,17 +58,17 @@ Make sure the _VFS_ directories in `vfs/` are given the same permissions as the 
 
 Run `node osjs generate:apache-htaccess` to generate the required htaccess files for Apache to work properly.
 
-Run `node osjs generate:apache-vhost --out=/etc/apache2/sites-enabled/100-osjs.conf` to generate config file (or look in doc/configs/ for example) you can use.
+Run `node osjs generate:apache-vhost --out=/etc/apache2/sites-enabled/100-osjs.conf` to generate config file you can use.
 
 *Note* You have to enable mod_rewrite for Apache and make sure htaccess is allowed.
 
 ### Lighttpd
 
-Run `node osjs generate:lighttpd-config --out=lighttpd.conf` to generate config file (or look in doc/configs/ for example)
+Run `node osjs generate:lighttpd-config --out=lighttpd.conf` to generate config file.
 
 ### Nginx
 
-Run `node osjs generate:nginx-config --out=/etc/nginx/sites-enabled/100-osjs.conf` to generate config file (or look in doc/configs/ for example)
+Run `node osjs generate:nginx-config --out=/etc/nginx/sites-enabled/100-osjs.conf` to generate config file.
 
 ### WAMP
 

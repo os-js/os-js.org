@@ -99,12 +99,6 @@ Same as RaspberryPI. Any device capable of running either Node or PHP should wor
 
 # Misc
 
-## NW
-
-This is experimental. See the [repository documentation](https://github.com/os-js/OS.js/blob/master/doc/NW.md) for more information.
-
----
-
 ## X11
 
-This is very experimental. See the [repository documentation](https://github.com/os-js/OS.js/blob/master/doc/X11.md) for more information.
+This is very experimental. See this [Gist](https://gist.github.com/andersevenrud/a09a3aef6066d609a18103d721d0b139#file-x11-md) for more information.
