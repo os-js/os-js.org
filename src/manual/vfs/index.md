@@ -21,23 +21,4 @@ $ node osjs config:add-mount --name=data --description="My data files" --path=/t
 $ node osjs build:config
 ```
 
-This will create the mountpoint `data://` and points to `/tmp` on the server. For group permissions, see [here](/manual/auth/permission).
-
-You can set it to read-only by using:
-
-```json
-{
-  "server": {
-    "vfs": {
-      "mounts": {
-        "data": {
-          "ro": true,
-          "destination": "/tmp"
-        }
-      }
-    }
-  }
-}
-```
-
-*Better CLI configuration support coming soon*
+This will create the mountpoint `data://` and points to `/tmp` on the server. For group permissions, see [here](/manual/auth/permission). If you want the mountpoint to be read-only, simply add the `-ro` flag to the config command.
