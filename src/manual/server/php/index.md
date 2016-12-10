@@ -5,6 +5,8 @@ layout: layout.html
 
 # PHP Server
 
+You can also run OS.js on PHP. Version 7 is recommended, but older also works (as long as you've installed the dependencies mentioned below).
+
 ## Dependencies
 
 Some included modules might require third party libraries in order to work correctly.

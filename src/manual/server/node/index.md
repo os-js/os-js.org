@@ -5,6 +5,8 @@ layout: layout.html
 
 # Node Server
 
+The default server for OS.js is Node. Version 4 or above is required (might work on older but not officially supported).
+
 You can install [node supervisor](https://github.com/petruisfan/node-supervisor) and the development (dist-dev) server will automatically reload on change.
 
 ## Starting
