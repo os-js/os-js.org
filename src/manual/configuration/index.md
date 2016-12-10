@@ -9,6 +9,8 @@ layout: layout.html
 
 The files are divided into sections and prefixed with a number so that they load in correct order.
 
+If you want to see the entire configuration tree, run `node osjs config:get`.
+
 ## Environment
 
 See the [Build Commands](/manual/build/cli) page for more information about environments.
