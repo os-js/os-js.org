@@ -3,6 +3,7 @@
     "include": [
       "OS.js/src/client/javascript/",
       "OS.js/src/client/javascript/core",
+      "OS.js/src/client/javascript/broadway",
       "OS.js/src/client/javascript/vfs",
       "OS.js/src/client/javascript/utils",
       "OS.js/src/client/javascript/dialogs",
