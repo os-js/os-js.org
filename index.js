@@ -109,7 +109,6 @@ var i = Metalsmith(__dirname)
     })).join('\n');
 
     _fs.writeFileSync(destination, result);
-
   })
   .use(function(files, metalsmith, done) {
     setImmediate(done);
