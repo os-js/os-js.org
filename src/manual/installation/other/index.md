@@ -22,6 +22,8 @@ The `Vagrantfile` is included.
 
 Use the included `Dockerfile` or make your own image with `./bin/build-docker-image.sh`.
 
+The official image(s) can be found on [Docker Hub](https://hub.docker.com/r/osjs/osjs/).
+
 ---
 
 # Boards
