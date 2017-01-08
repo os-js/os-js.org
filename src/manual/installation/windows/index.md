@@ -14,13 +14,7 @@ This are the instructions on how to install on Windows platforms.
 
 ---
 
-## Automated
-
-Download and run https://os.js.org/installer.exe.
-
----
-
-## Manual
+## Manual (recommended)
 
 **IMPORTANT** Run `cmd` as *Administrator*:
 
@@ -31,6 +25,12 @@ $ npm install --production
 $ bin\create-windows-symlinks
 $ node osjs build
 ```
+
+---
+
+## Automated
+
+Download and run https://os.js.org/installer.exe.
 
 ---
 

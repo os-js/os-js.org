@@ -14,19 +14,9 @@ This are the instructions on how to install on Linux and BSD platforms.
 
 ---
 
-## Automated
+## Manual (recommended)
 
-Download and run the installer in your shell:
-
-```bash
-$ curl -sS https://os.js.org/installer | sh
-```
-
----
-
-## Manual
-
-Or manually (recommended):
+To install manually, simply run these commands:
 
 ```bash
 $ git clone https://github.com/os-js/OS.js.git
@@ -36,6 +26,16 @@ $ node osjs build
 ```
 
 You can download and extract a zip-file instead of using `git`, but is not recommended as it makes the update process harder.
+
+---
+
+## Automated
+
+Download and run the installer in your shell:
+
+```bash
+$ curl -sS https://os.js.org/installer | sh
+```
 
 ---
 
