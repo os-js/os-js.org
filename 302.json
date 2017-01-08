@@ -91,6 +91,7 @@
     "srcclientjavascriptdialogsinputjs.html",
     "srcclientjavascriptvfsinternaljs.html",
     "srcjavascripthelpersdate.html",
+    "srcjavascriptapijs.html",
     "srcclientjavascriptapijs.html",
     "srcclientjavascriptgui_schemejs.html",
     "srcjavascripthelperswindows-live-apijs.html",
@@ -183,6 +184,7 @@
     "srcjavascriptvfsjs.html",
 
     "OSjs.Authenticator.html",
+    "OSjs.Core.Handler.html",
     "OSjs.Core.HandlerConnection.html",
     "OSjs.Helpers.FirefoxMarketplace.Class.html",
     "OSjs.Helpers.FirefoxMarketplace.html",
