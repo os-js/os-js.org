@@ -183,6 +183,7 @@
     "srcclientjavascripthelpersiframe-applicationjs.html",
     "srcjavascriptvfsjs.html",
 
+    "OSjs.VFS.Transports.Internal.html",
     "OSjs.Authenticator.html",
     "OSjs.Core.Handler.html",
     "OSjs.Core.HandlerConnection.html",

@@ -19,6 +19,7 @@ You simply have to pull the changes and rebuild:
 
 ```bash
 $ git pull
+$ npm install --production
 $ node osjs build
 ```
 
@@ -27,5 +28,6 @@ $ node osjs build
 If you downloaded a zip-file or some other archive, you can simply extract the file into your OS.js installation, then:
 
 ```bash
+$ npm install --production
 $ node osjs build
 ```
