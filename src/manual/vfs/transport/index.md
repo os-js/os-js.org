@@ -50,8 +50,19 @@ $ git clone https://github.com/dropbox/dropbox-js.git vendor/dropbox-js
 
 $ node osjs config:set --name=client.DropboxAPI.ClientKey --value=YOUR_CLIENT_KEY
 $ node osjs config:set --name=client.VFS.Dropbox.Enabled --value=true
-$ node osjs config:add-preload name=dropbox --path=/vendor/dropbox.js
+$ node osjs config:add-preload --name=dropbox --path=/vendor/dropbox.js
 $ node osjs build:config
+```
+
+You also need to install dropbox:
+
+```bash
+$ mkdir vendor
+$ cd vendor/
+$ git clone https://github.com/dropbox/dropbox-js.git
+$ cd dropbox-js
+$ npm install
+$ npm pack
 ```
 
 ---
