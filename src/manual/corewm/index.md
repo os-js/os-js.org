@@ -41,7 +41,7 @@ See the included font theme for an example on how to set up.
 
 ```bash
 $ edit src/conf/112-themes.json # Or create your own file
-$ node osjs build:config buid:theme --fonts
+$ node osjs build:config build:theme --fonts
 ```
 
 ---
