@@ -25,5 +25,5 @@ $ node osjs generate:package --name=default/MyName --type=extension
 ## Building and installation
 
 ```bash
-$ node osjs build:manifest buid:config build:package --name=default/MyName
+$ node osjs build:manifest build:config build:package --name=default/MyName
 ```

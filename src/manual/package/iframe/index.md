@@ -39,5 +39,5 @@ You can communicate between OS.js and your IFrame application using the browser 
 ## Building and installation
 
 ```bash
-$ node osjs build:manifest buid:config build:package --name=default/MyName
+$ node osjs build:manifest build:config build:package --name=default/MyName
 ```
