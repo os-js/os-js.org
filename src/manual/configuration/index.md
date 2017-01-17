@@ -11,6 +11,28 @@ The files are divided into sections and prefixed with a number so that they load
 
 If you want to see the entire configuration tree, run `node osjs config:get`.
 
+## Variables
+
+You can define your own variables (or keywords) in the configuration tree:
+
+```bash
+$ node osjs config:set --name=my.namespace.key --value=foo
+$ node osjs config:set --name=some.other.key --value="%my.namespace.key% and some other stuff"
+```
+
+You can also define root-level variables in all uppercase letters that can be overriden by environmental variables when you run OS.js:
+
+```bash
+# Set a default value
+$ node osjs config:set --name=KEY --value=/opt
+
+# Then for example change a mountpoint to use this variable
+$ node osjs config:set --name=server.vfs.mounts.shared --value="%KEY%/shared"
+
+# Example of how to override upon start
+$ KEY=/usr/share/osjs node osjs run
+```
+
 ## Environment
 
 See the [Build Commands](/manual/build/cli) page for more information about environments.
@@ -100,6 +122,13 @@ You can also add overlays into the build process:
     }
   }
 }
+```
+
+You can add files the configuration system:
+```bash
+$ node osjs config:add-script --path=/path/to/script.js [--overlay=custom_name]
+$ node osjs config:add-style --path=/path/to/style.css [--overlay=custom_name]
+$ node osjs config:add-locale --path=/path/to/locale.js [--overlay=custom_name]
 ```
 
 ### Programatic approach
