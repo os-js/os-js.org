@@ -56,6 +56,7 @@ Stores the data in the filesystem.
 $ node osjs config:set --name=storage --value=system
 $ node osjs build:config build:core
 ```
+By default, this module expects you to store the data in `/etc/osjs`, but you can modify this (see `server.modules.storage` tree for settings).
 
 ### groups.json
 
