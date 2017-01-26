@@ -11,6 +11,7 @@ OS.js is shipped with all features pre-enabled, with some exceptions, which are 
 
 You can get extra features and packages from these official repositories:
 
+- https://github.com/os-js/OS.js-extras
 - https://github.com/os-js/OS.js-examples
 - https://github.com/os-js/OS.js-experimental
 - https://github.com/os-js/OS.js-submissions
