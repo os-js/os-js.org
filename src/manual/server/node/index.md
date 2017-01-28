@@ -41,8 +41,14 @@ server {
 
     server_name osjs.local;
 
-    location / {
-        proxy_pass http://localhost:8000;
+    merge_slashes off; # This is very important
+    location / { # Leading slash!
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_pass http://localhost:8000/; # The leading slash!
+        proxy_redirect off; # Also note this
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
