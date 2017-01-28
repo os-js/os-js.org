@@ -45,7 +45,7 @@ var i = Metalsmith(__dirname)
     engine: 'handlebars'
   }))
   .use(sitemap({
-    hostname: "https://os.js.org",
+    hostname: "https://www.os-js.org",
     omitIndex: true
   }))
   .use(function(files, metalsmith, done) {
@@ -56,7 +56,7 @@ var i = Metalsmith(__dirname)
     const template = _fs.readFileSync(_path.join(__dirname, 'layouts/302.html')).toString();
 
     Object.keys(tree).forEach(function(category) {
-      var url = 'https://os.js.org';
+      var url = '';
 
       if ( ['_', 'manuals', 'tutorials'].indexOf(category) !== -1 ) {
         url += '/manual';
