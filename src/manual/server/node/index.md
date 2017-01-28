@@ -68,3 +68,22 @@ $ sudo a2enmod proxy_http
   ProxyPass / http://localhost:8000/
 </VirtualHost>
 ```
+
+## Session Management
+
+By default OS.js runs with its session data *in-memory*. You can change this to for example file-storage:
+
+```bash
+$ npm install session-file-store
+$ node osjs config:set --name=server.http.session.module --value=file
+$ node osjs build:config
+```
+
+You should also set your own secret key to something random. For example:
+
+```bash
+$ node osjs config:set --name=server.http.session.secret --value=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+$ node osjs build:config
+```
+
+For more options, see `200-server.json` file. You can also make your own session modules and implement any supported [APIs listed here](https://github.com/expressjs/session#compatible-session-stores).
