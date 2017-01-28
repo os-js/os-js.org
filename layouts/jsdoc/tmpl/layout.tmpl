@@ -102,7 +102,11 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-90971004-3', 'auto');
+  if ( window.location.hostname === 'os.js.org' ) {
+    ga('create', 'UA-90971004-3', 'auto');
+  } else {
+    ga('create', 'UA-46087265-1', 'auto');
+  }
   ga('send', 'pageview');
     </script>
 
