@@ -1,6 +1,6 @@
 ---
 title: Hall Of Fame
-layout: hof.html
+layout: simple.html
 ---
 
 ## Hall Of Fame
