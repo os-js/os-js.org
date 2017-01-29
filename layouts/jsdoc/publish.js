@@ -228,6 +228,7 @@ function generate(title, docs, filename, resolveLinks) {
 
     var docData = {
         env: env,
+        path: path.join(path.basename(outdir), path.basename(filename)),
         title: title,
         docs: docs
     };
