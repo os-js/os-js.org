@@ -25,7 +25,7 @@ This is just a simple database backend that allows you to store your users (and 
 
 ```bash
 # Install dependencies
-$ npm install sqlite3 bcryptjs
+$ npm install sqlite3 bcrypt
 
 # Set up configuration
 $ node osjs config:set --name=authenticator --value=database
@@ -46,7 +46,7 @@ $ mkdir vfs/home/anders
 
 ```bash
 # Install node dependencies
-$ npm install mysql bcryptjs
+$ npm install mysql bcrypt
 
 # If you are on PHP 5.5 or below (and you actually use the PHP backend):
 $ cd src/server/php
