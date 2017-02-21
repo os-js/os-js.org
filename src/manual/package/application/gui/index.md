@@ -50,7 +50,7 @@ An overview of common GUI operations in an application
 ```js
 
 // Load and set up scheme (GUI) here
-scheme.render(this, 'ApplicationMyNameWindow', root);
+this._renderr('ApplicationMyNameWindow');
 
 // Normal binding
 this._find('MenuClose').on('click', function() {
