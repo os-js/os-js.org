@@ -62,13 +62,29 @@ drop:file     When a internal file object was dropped   => (ev, VFS.File, args)
 
 ```js
 ._close(); // Closes the window
-._move(x, y);
-._resize(w, h);
+._minimize(); // Minimize window state
+._maximize(); // Maximize window state
+._restore(); // Restore window state
+._focus(); // Focuses the window
+._blur(); // Unfocuses the window
+
+._move(x, y); // Move to given position
+._resize(w, h); // Resize to given size
+
 ._on('event', function() {}); // Subscribe to event
 ._off('event'); // Unsubscribe to an event (you can pass the callback as second argument)
 ._emit('event', [arg, ...]); // Emit an event
+
+._render('id'); // Renders given Scheme fragment into the window
 ._find('id'); // Finds GUI Element with given "data-id="
+._findByQuery('query'); // Finds GUI Element by query
+._findByQuery('query', true); // Finds all GUI Elements matching this query
+._findDOM('id'); // Same as `find()` except it returns a Node instance instead of GUI.Element
 ._create('element', {}, parentNode); // Create a new GUI element with given parameters and parent
+
+._getRoot(); // Gets the window content container Node
+._toggleLoading(boolean); // Toggle loading overlay
+._toggleDisabled(boolean); // Toggle disabled overlay
 ```
 
 For more information see the [API documentation](https://os.js.org/doc/client/OSjs.Core.Window.html).
