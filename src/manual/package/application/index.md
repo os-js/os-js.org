@@ -21,7 +21,6 @@ $ node osjs generate:package --name=default/MyName --type=simple
 ## Development
 
 - `main.js` - The application client code
-- `main.js` - The application client code
 - `main.css` - The application client stylesheet
 - `scheme.html` - The scheme GUI layout
 - `api.js` - The application server code

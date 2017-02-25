@@ -5,6 +5,17 @@ layout: layout.html
 
 # Application - Misc
 
+## Handling resources
+
+You can get paths to your application resources with:
+```
+
+._getResource('image.png'); // Gets URL path
+
+._getResource('image.png', true); // Gets VFS path
+
+```
+
 ## Handling launch arguments
 
 When you launch an Application it normally recieves arguments based on how it was opened. Most included Applications with file interactions have a `file` argument to open a file (etc).
