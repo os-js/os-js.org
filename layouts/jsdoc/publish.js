@@ -326,7 +326,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
             inner += '<div class="sub"><span>' + lbls[i] + '</span><ul>';
 
             subitems.forEach(function(ki) {
-              inner += '<li>' + linkto(ki.longname, ki.name) + '</li>';
+              inner += '<li class="scope_' + ki.scope + '">' + linkto(ki.longname, ki.name) + '</li>';
             });
 
             inner += '</ul></div>'

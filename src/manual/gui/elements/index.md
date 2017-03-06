@@ -44,10 +44,15 @@ GUI Elements are comprised of regular HTML, JavaScript and CSS.
 //
 // Normal
 //
-var el = GUI.Element.create('gui-element-name', {
+var guiElement = GUI.Element.create('gui-element-name', {
   parameter: 'value'
 });
-parentElement.append(el);
+parentElement.append(guiElement);
+
+//
+// Via DOM element
+//
+var guiElement = GUI.Element.createFromNode(el);
 
 //
 // Via Scheme
@@ -98,88 +103,93 @@ Create a new file in `src/client/javascript/gui`:
    * @api OSjs.GUI.Elements.gui-my-element
    * @class
    */
-  GUI.Elements['gui-my-element'] = (function() {
+   (function() {
+     // Helpers
 
-    // Helpers
+     function setColor(el, color) {
+       el.style.color = color || '#000000'; // Make sure black is default if no color was given
+     }
 
-    function setColor(el, color) {
-      el.style.color = color || '#000000'; // Make sure black is default if no color was given
-    }
+     function setLabel(el, label) {
+       Utils.$empty(el);
+       el.appendChild(document.createTextNode(String(label));
+     }
 
-    function setLabel(el, label) {
-      Utils.$empty(el);
-      el.appendChild(document.createTextNode(String(label));
-    }
+     function getColor(el) {
+       // First try to get color from CSS, then fall-back to element attribute, or the hard default
+       return el.style.color || GUI.Helpers.getProperty(el, 'color') || '#00000';
+     }
 
-    function getColor(el) {
-      // First try to get color from CSS, then fall-back to element attribute, or the hard default
-      return el.style.color || GUI.Helpers.getProperty(el, 'color') || '#00000';
-    }
+     GUI.Element.register({
+       tagName: 'gui-my-element'
+     }, {
+       //
+       // This is called whenever you do `element.on(evName, fn)`
+       //
+       on: function(evName, callback, params) {
+         // In this case we just pass over all events to the root element (ex: 'click')
+         Utils.$bind(this.$element, evName, callback.bind(this), params);
 
-    // The Element
+         return this;
+       },
 
-    return {
+       //
+       // This is called whenever you do `element.get(param)`
+       //
+       get: function(param) {
+         if ( param === 'color' ) {
+           return getColor(this.$element);
+         }
 
-      //
-      // This is called whenever you do `element.on(evName, fn)`
-      //
-      bind: function(el, evName, callback, params) {
-        // In this case we just pass over all events to the root element (ex: 'click')
-        Utils.$bind(el, evName, callback.bind(new GUI.Element(el)), params);
-      },
+         // Or get from element attribute
+         return GUI.Element.prototype.get.apply(this, arguments);
+       },
 
-      //
-      // This is called whenever you do `element.get(param)`
-      //
-      get: function(el, param) {
-        if ( param === 'color' ) {
-          return getColor(el);
-        }
+       //
+       // This is called whenever you do `element.set(param, value)`
+       //
+       set: function(param, value) {
+         if ( param === 'color' ) {
+           setColor(this.$element, value);
+           return this;
+         } else if ( param === 'label' ) {
+           setLabel(this.$element, value);
+           return this;
+         }
+         return GUI.Element.prototype.set.apply(this, arguments);
+       },
 
-        // Or get from element attribute
-        return GUI.Helpers.getProperty(el, param);
-      },
+       //
+       // You can also bypass the internal setting method to have custom attributes applied to the DOM element
+       //
+       /*
+       set: function(param, value) {
+         if ( param === 'color' ) {
+           this.$element.setAttribute('data-color', String(value));
+           this.$element.setAttribute('data-custom-attribute', 'Foo'); // Add another one
+           setColor(value);
+           return this;
+         }
 
-      //
-      // This is called whenever you do `element.set(param, value)`
-      //
-      set: function(el, param, value) {
-        if ( param === 'color' ) {
-          setColor(el, value);
-        } else if ( param === 'label' ) {
-          setLabel(el, value);
-        }
-      },
+         return GUI.Element.prototype.set.apply(this, arguments);
+       },
+       */
 
-      //
-      // You can also bypass the internal setting method to have custom attributes applied to the DOM element
-      //
-      /*
-      set: function(el, param, value) {
-        if ( param === 'color' ) {
-          el.setAttribute('data-color', String(value));
-          el.setAttribute('data-custom-attribute', 'Foo'); // Add another one
-          setColor(value);
+       //
+       // This is the method called when the Scheme is asking to render your element.
+       // `el` is the root element (in this case "gui-my-element")
+       //
+       build: function() {
+         var el = this.$element;
+         var label = el.getAttribute('data-label') || 'My GUI element'; // If no label was set, use default one
+         var color = el.getAttribute('data-color');
 
-          return true; // bypass
-        }
+         setLabel(label);
+         setColor(color);
 
-        return false;
-      },
-      */
-
-      //
-      // This is the method called when the Scheme is asking to render your element.
-      // `el` is the root element (in this case "gui-my-element")
-      //
-      build: function(el) {
-        var label = el.getAttribute('data-label') || 'My GUI element'; // If no label was set, use default one
-        var color = el.getAttribute('data-color');
-
-        setLabel(label);
-        setColor(color);
-      }
-    };
+         return this;
+       }
+    }));
 
   })();
 

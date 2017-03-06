@@ -9,6 +9,7 @@
       "OS.js/src/client/javascript/dialogs",
       "OS.js/src/client/javascript/helpers",
       "OS.js/src/client/javascript/gui",
+      "OS.js/src/client/javascript/gui/elements",
       "OS.js/src/client/javascript/vfs/transports",
       "OS.js/src/client/javascript/vfs/mounts"
     ],
