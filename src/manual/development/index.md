@@ -29,7 +29,7 @@ $ sudo npm install -g grunt-cli mocha
 $ node osjs build
 
 # Optionally run watch to automatically rebuild client files upon changes.
-$ grunt watch
+$ node osjs watch
 
 # Optionally install the node supervisor to automaticall restart server upon changes.
 $ npm install -g supervisor
@@ -44,7 +44,7 @@ $ ./bin/start-dev.sh
 
 ### Automatically build changes
 
-Simply run `grunt watch`
+Simply run `node osjs watch`
 
 ### Reload application in client
 

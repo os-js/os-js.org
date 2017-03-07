@@ -17,4 +17,3 @@ layout: layout.html
 | eslint           | Run javascript linting                           |
 | csslint          | Run css linting                                  |
 | validate_xml     | Run HTML linting                                 |
-| watch            | Start watching files for changes (auto build)    |

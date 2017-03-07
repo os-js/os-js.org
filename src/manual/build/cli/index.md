@@ -14,6 +14,7 @@ Available targets: `dist`, `dist-dev` (default is `dist-dev`).
 | Task             | Arguments                                            | Description                                |
 | ---------------- | ---------------------------------------------------- | ------------------------------------------ |
 | run              | `--target=TARGET (--loglevel=N) (--port=N)`          | Runs OS.js node server                     |
+| watch            |                                                      | Watch codebase and autobuild changes       |
 
 ### Examples
 
