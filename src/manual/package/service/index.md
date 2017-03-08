@@ -25,5 +25,17 @@ $ node osjs generate:package --name=default/MyName --type=service
 ## Building and installation
 
 ```bash
-$ node osjs build:manifest build:config build:package --name=default/MyName
+# Adds package to global manifest. You have to run this initially and when you change your metadata file
+$ node osjs build:manifest
+
+# Build package
+$ node osjs build:package --name=default/MyName
+```
+
+### Tips
+
+If you want to automatically rebuild your changes, run:
+
+```
+$ node osjs watch
 ```
