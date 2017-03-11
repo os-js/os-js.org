@@ -189,7 +189,6 @@ main {
     }
       main > nav > ul > li {
         display : block;
-        padding : 1em;
         margin : 1em;
         height : 4em;
         min-width : ~"calc(20% - 2em)";
@@ -229,9 +228,13 @@ main {
         display : block;
         width : 100%;
         height : 100%;
+        position : relative;
+        z-index : 9999999;
       }
         main > nav > ul > li > a > span {
           display : block;
+          padding : 1em;
+          width : 100%;
           -webkit-transition: .2s ease-in-out;
           -moz-transition: .2s ease-in-out;
           -o-transition: .2s ease-in-out;
@@ -284,15 +287,19 @@ footer {
   main > nav {
     padding : .5em;
   }
-    main > nav > ul {
-      margin-top : .5em;
-      margin-bottom : .5em;
+
+  main > nav > ul > li > a > span {
+    padding : .5em;
+  }
+  main > nav > ul {
+    margin-top : .5em;
+    margin-bottom : .5em;
+  }
+    main > nav > ul > li {
+      margin : .5em;
+      min-width : ~"calc(50% - 1em)";
+      width : ~"calc(50% - 1em)";
     }
-      main > nav > ul > li {
-        margin : .5em;
-        min-width : ~"calc(50% - 1em)";
-        width : ~"calc(50% - 1em)";
-      }
 
   main content {
     padding-top : .5em;
