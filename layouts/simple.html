@@ -41,18 +41,82 @@
 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro" />
     <link href="/css/home.css" rel="stylesheet" type="text/css" />
+    <style>
+      content.wrapper {
+        text-align: center;
+      }
+      content table {
+        margin : 0 auto;
+        max-width : 100%;
+      }
+    </style>
   </head>
   <body class="index">
 
     <header class="noise vcenter">
-      <img id="logo" alt="Arctic Group" src="images/logo.svg" class="wrapper" />
+      <img id="logo" alt="Logo" src="/images/logo.svg" class="wrapper" />
 
       <h1 class="wrapper">
-        The requested page was not found (HTTP 404).<br />
-        <a href="/">Take me to the homepage</a>
+        OS.js is a JavaScript web desktop implementation for your browser with a fully-fledged window manager, Application APIs, GUI toolkits and filesystem abstraction.
       </h1>
 
+      <a href="#content" id="arrow">
+        <img alt="down" src="/images/down.svg" />
+      </a>
+
     </header>
+
+    <main>
+      <content class="wrapper" id="content">
+        {{{ contents }}}
+      </content>
+    </main>
+
+    <footer class="vcenter noise">
+      <p>
+        Copyright &copy; 2011-2017 Anders Evenrud
+      </p>
+    </footer>
+
+    <script>
+      // This script snippet is just for the smooth scrolling arrow button
+      function smoothScrollIntoView(el, duration) {
+        duration = duration || 1000;
+
+        var rect = el.getBoundingClientRect();
+        var started = Date.now();
+        var ends = started + duration;
+        var y = Math.min(document.body.scrollTop + rect.top, document.body.scrollHeight - window.innerHeight);
+
+        (function tick() {
+          var t = Date.now();
+
+          if ( t < ends ) {
+            var dt = t - started;
+            var duration = ends - started;
+            var distanceLeft = y - document.body.scrollTop;
+
+            if ( distanceLeft > 1 ) {
+              var travel = distanceLeft * (dt / duration);
+              document.body.scrollTop += travel;
+              window.requestAnimationFrame(tick);
+              return;
+            }
+          }
+
+          document.body.scrollTop = y;
+        })();
+      }
+
+      window.addEventListener('DOMContentLoaded', function() {
+        var arrow = document.querySelector('#arrow');
+        var main = document.querySelector(arrow.href);
+        arrow.addEventListener('click', function(ev) {
+          ev.preventDefault();
+          smoothScrollIntoView(main);
+        });
+      });
+    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
