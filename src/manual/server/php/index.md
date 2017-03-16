@@ -27,11 +27,7 @@ $ php composer.phar install
 ## NIX
 
 ```bash
-# Start production server
 $ (cd dist; php -S 0.0.0.0:8000 ../src/server/php/server.php)
-
-# Start development server
-$ (cd dist-dev; php -S 0.0.0.0:8000 ../src/server/php/server.php)
 ```
 
 ---
@@ -39,12 +35,7 @@ $ (cd dist-dev; php -S 0.0.0.0:8000 ../src/server/php/server.php)
 ## Windows
 
 ```bash
-# Start production server
 $ cd dist
-$ php -S 0.0.0.0:8000 ..\src\server\php\server.php
-
-# Start development server
-$ cd dist-dev
 $ php -S 0.0.0.0:8000 ..\src\server\php\server.php
 ```
 

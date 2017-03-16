@@ -35,7 +35,7 @@ $ node osjs watch
 $ npm install -g supervisor
 
 # Start server
-$ ./bin/start-dev.sh
+$ ./bin/start.sh --debug
 ```
 
 ---

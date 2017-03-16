@@ -9,12 +9,10 @@ You can use these tasks via `node osjs <task>`.
 
 ## Misc Tasks
 
-Available targets: `dist`, `dist-dev` (default is `dist-dev`).
-
-| Task             | Arguments                                            | Description                                |
-| ---------------- | ---------------------------------------------------- | ------------------------------------------ |
-| run              | `--target=TARGET (--loglevel=N) (--port=N)`          | Runs OS.js node server                     |
-| watch            |                                                      | Watch codebase and autobuild changes       |
+| Task             | Arguments                                      | Description                                |
+| ---------------- | ---------------------------------------------- | ------------------------------------------ |
+| run              | `(--debug) (--loglevel=N) (--port=N)`          | Runs OS.js node server                     |
+| watch            |                                                | Watch codebase and autobuild changes       |
 
 ### Examples
 
@@ -24,34 +22,30 @@ $ node osjs run
 
 ## Build Tasks
 
-Available targets: `dist`, `dist-dev` (default is both. Exception is for `build:config`, which uses targets from configuration section below)
-
-| Task             | Arguments                                            | Description                                |
-| ---------------- | ---------------------------------------------------- | ------------------------------------------ |
-| build            | `--target=TARGET`                                    | Build everything                           |
-| build:config     | `--target=TARGET`                                    | Build configuration files                  |
-| build:manifest   |                                                      | Build package manifest file                |
-| build:core       | `--target=TARGET (--standalone) (--nw) (--compress)` | Build core files and dist directories      |
-| build:package    | `--name=REPO/NAME --target=TARGET (--compress)`      | Build spesific package                     |
-| build:packages   | `--target=TARGET (--compress)`                       | Build all packages                         |
-| build:theme      | `--style=NAME`                                       | Builds spesific style theme                |
-| build:theme      | `--icons=NAME`                                       | Builds spesific icon theme                 |
-| build:theme      | `--static`                                           | Copies all static theme resources dist     |
-| build:theme      | `--fonts`                                            | Copies all fonts to dist                   |
-| build:themes     |                                                      | Builds all themes                          |
+| Task             | Arguments                                    | Description                                |
+| ---------------- | ---------------------------------------------| ------------------------------------------ |
+| build            | `(--debug)`                                  | Build everything                           |
+| build:config     | `(--debug)`                                  | Build configuration files                  |
+| build:manifest   |                                              | Build package manifest file                |
+| build:core       | `--debug) (--standalone) (--nw) (--compress)`| Build core files and dist directory        |
+| build:package    | `--name=REPO/NAME (--debug) (--compress)`    | Build spesific package                     |
+| build:packages   | `(--debug) (--compress)`                     | Build all packages                         |
+| build:theme      | `--style=NAME`                               | Builds spesific style theme                |
+| build:theme      | `--icons=NAME`                               | Builds spesific icon theme                 |
+| build:theme      | `--static`                                   | Copies all static theme resources          |
+| build:theme      | `--fonts`                                    | Copies all fonts to dist                   |
+| build:themes     |                                              | Builds all themes                          |
 
 ### Examples
 
 ```bash
 $ node osjs build:config build:themes
-$ node osjs build:core --target=dist-dev
+$ node osjs build:core --debug
 ```
 
 ---
 
 ## Configuration Tasks
-
-Available targets: `client`, `server` (default is both)
 
 | Task                       | Arguments                                  | Description                                |
 | -------------------------- | -------------------------------------------| ------------------------------------------ |
@@ -77,12 +71,10 @@ $ node osjs config:add-mount --name=tmp --description="Temporary files" --path=/
 
 ## Generators
 
-Available targets: `dist`, `dist-dev` (default is `dist-dev`)
-
 | Task                       | Arguments                        | Description                                |
 | -------------------------- | -------------------------------- | ------------------------------------------ |
-| generate:apache-htaccess   | `(--target=TARGET)`              | Builds the Apache `.htaccess` file         |
-| generate:apache-vhost      | `--out=FILE (--target=TARGET)`   | Generate a Apache vhost config             |
+| generate:apache-htaccess   | `(--debug)`                      | Builds the Apache `.htaccess` file         |
+| generate:apache-vhost      | `--out=FILE`                     | Generate a Apache vhost config             |
 | generate:nginx-config      | `--out=FILE`                     | Generate a Nginx config                    |
 | generate:lighttpd-config   | `--OUT=FILE`                     | Generate a lighttpd config                 |
 | generate:package           | `--name=REPO/NAME (--type=FOO)`  | Creates a new package                      |
@@ -91,6 +83,6 @@ Available targets: `dist`, `dist-dev` (default is `dist-dev`)
 
 ```bash
 $ node osjs generate:package --name=default/AwesomeApp --type=iframe
-$ sudo node osjs generate:apache-vhost --out=/etc/apache2/sites-enabled/100-osjs.conf --target=dist
+$ sudo node osjs generate:apache-vhost --out=/etc/apache2/sites-enabled/100-osjs.conf --debug
 ```
 
