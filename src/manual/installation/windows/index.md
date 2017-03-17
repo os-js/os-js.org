@@ -16,13 +16,10 @@ This are the instructions on how to install on Windows platforms.
 
 ## Manual (recommended)
 
-**IMPORTANT** Run `cmd` as *Administrator*:
-
 ```bash
 $ git clone https://github.com/os-js/OS.js.git
 $ cd OS.js
 $ npm install --production
-$ bin\create-windows-symlinks
 $ node osjs build
 ```
 
