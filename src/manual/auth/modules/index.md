@@ -81,6 +81,8 @@ $ node bin/add-user.js add anders admin
 $ mkdir vfs/home/anders
 ```
 
+**NOTE:** Remember to restart the server to reload configuration changes.
+
 ---
 
 ## PAM and Shadow
@@ -125,4 +127,6 @@ $ node osjs build:config build:core
 
 **NOTE:** Also, on some systems you might have to run OS.js server as an administrator (`sudo`) depending on the PAM setup.
 
-**NOTE:** This module has no support for user management at the moment. You'll have to use the system tools.*
+**NOTE:** This module has no support for user management at the moment. You'll have to use the system tools.
+
+**NOTE:** Remember to restart the server to reload configuration changes.
