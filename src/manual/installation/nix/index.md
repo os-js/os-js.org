@@ -34,7 +34,7 @@ You can download and extract a zip-file instead of using `git`, but is not recom
 Download and run the installer in your shell:
 
 ```bash
-$ curl -sS https://os.js.org/installer | sh
+$ curl -sS https://www.os.js.org/installer | sh
 ```
 
 ---
