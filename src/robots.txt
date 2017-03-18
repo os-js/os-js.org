@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: test
+Disallow: windows-installer.cmd
+Disallow: windows-installer.ps1
+Disallow: installer.exe
+Disallow: installer

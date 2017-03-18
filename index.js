@@ -51,39 +51,6 @@ var i = Metalsmith(__dirname)
   .use(function(files, metalsmith, done) {
     setImmediate(done);
 
-    const tree = JSON.parse(_fs.readFileSync('302.json'));
-    const destination = _path.join(__dirname, 'build/robots.txt');
-
-    const list = [
-      'test',
-      'windows-installer.cmd',
-      'windows-installer.ps1',
-      'installer.exe',
-      'installer'
-    ];
-
-    Object.keys(tree).forEach(function(category) {
-      var url = '/doc/';
-      if ( category !== '_' ) {
-        url += category + '/';
-      }
-
-      tree[category].forEach(function(filename) {
-        list.push(url + filename);
-      });
-    });
-
-    var result = [
-      'User-agent: *'
-    ].concat(list.map(function(iter) {
-      return 'Disallow: ' + iter;
-    })).join('\n');
-
-    _fs.writeFileSync(destination, result);
-  })
-  .use(function(files, metalsmith, done) {
-    setImmediate(done);
-
     _fs.copySync(_path.join(__dirname, 'OS.js/src/installer/installer.sh'), _path.join(__dirname, 'src/installer'));
     _fs.copySync(_path.join(__dirname, 'OS.js/src/installer/installer.ps1'), _path.join(__dirname, 'src/installer.ps1'));
   });
@@ -92,7 +59,6 @@ if ( process.argv[2] === '--watch' ) {
   i.use(watch({
     paths: {
       "${source}/**/*": true,
-      "302.json": true,
       "layouts/**/*": "**/*"
     },
     livereload: true,
