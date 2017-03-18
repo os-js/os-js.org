@@ -26,10 +26,10 @@ $ npm install
 $ sudo npm install -g grunt-cli mocha
 
 # Build everything
-$ node osjs build
+$ node osjs build --debug
 
 # Optionally run watch to automatically rebuild client files upon changes.
-$ node osjs watch
+$ node osjs watch --debug
 
 # Optionally install the node supervisor to automaticall restart server upon changes.
 $ npm install -g supervisor
@@ -44,7 +44,7 @@ $ ./bin/start.sh --debug
 
 ### Automatically build changes
 
-Simply run `node osjs watch`
+Simply run `node osjs watch --debug` (or without --debug for a normal build)
 
 ### Reload application in client
 
@@ -80,7 +80,7 @@ $ git checkout -b issue-XXX
 $ edit src/client/javascript/init.js
 
 # Rebuild everything
-$ node osjs build
+$ node osjs build --debug
 
 # Run tests
 $ grunt test
