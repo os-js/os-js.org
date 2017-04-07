@@ -17,8 +17,9 @@ $ node osjs generate:package --name=default/MyName --type=service
 
 ## Development
 
+- `metadata.json` - The package manifest
 - `main.js` - The service client code
-- `api.js` - The service server code
+- `server/main.js` - The service server code
 
 ---
 

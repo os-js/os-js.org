@@ -17,8 +17,9 @@ $ node osjs generate:package --name=default/MyName --type=extension
 
 ## Development
 
-- `extension.js` - Loaded into the client and you can use any namespace available.
-- `api.js` - Loaded into the server and this is where you can register API endpoints.
+- `metadata.json` - The package manifest
+- `main.js` - Loaded into the client and you can use any namespace available.
+- `server/main.js` - Loaded into the server and this is where you can register API endpoints.
 
 ---
 

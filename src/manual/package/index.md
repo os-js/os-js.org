@@ -164,7 +164,7 @@ Simply add this to the metadata file and the file is built whenever the `node os
 
 ## Server APIs
 
-You can make your own server-side API methods for your applications. These are defined in `api.js`.
+You can make your own server-side API methods for your applications. These are defined in `server/main.js`.
 
 ### Example server method
 
