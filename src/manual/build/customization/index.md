@@ -29,7 +29,7 @@ The actual interaction code is in the *Authenticator*.
 
 ```bash
 $ cp -r src/templates/dist/login/default.html src/templates/dist/login/mytemplate.html
-$ node osjs config:set --name=build.dist.layout --value=mytemplate
+$ node osjs config:set --name=build.dist.login --value=mytemplate
 $ node osjs build:core
 ```
 
@@ -39,6 +39,6 @@ To customize the login screen markup, just make a copy of the default and make a
 
 ```bash
 $ cp -r src/templates/dist/splash/default.html src/templates/dist/splash/mytemplate.html
-$ node osjs config:set --name=build.dist.layout --value=mytemplate
+$ node osjs config:set --name=build.dist.splash --value=mytemplate
 $ node osjs build:core
 ```
