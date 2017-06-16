@@ -123,6 +123,30 @@ $ node osjs config:set --name=client.ReloadOnShutdown --value=true
 $ node osjs build:config build:core
 ```
 
+By default, this module expects you to store the data in `/etc/osjs`, but you can modify this (see `server.modules.*` tree for settings).
+
+### groups.json
+
+This is an example file for `groups.json`
+
+```json
+{
+  "anders": ["admin"],
+  "guest": ["api", "application", "upload", "fs"],
+  "marcello": ["api", "application", "curl", "upload", "fs"]
+}
+```
+
+### blacklist.json
+
+This is an example file for `blacklist.json`
+
+```json
+{
+  "anders": ["default/ApplicationDraw"]
+}
+```
+
 **NOTE:** On some systems you might have to install `authenticate-pam` with `npm install -g` or else you might get a *Error in service module* upon request.
 
 **NOTE:** Also, on some systems you might have to run OS.js server as an administrator (`sudo`) depending on the PAM setup.

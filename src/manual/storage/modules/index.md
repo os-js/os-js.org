@@ -14,7 +14,7 @@ This module only saves the data in the *Browser* using `LocalStorage`.
 
 ```bash
 $ node osjs config:set --name=storage --value=demo
-$ node osjs build:config build:core
+$ node osjs build:config
 
 ```
 
@@ -31,7 +31,7 @@ Stores user data in a database.
 ```bash
 $ node osjs config:set --name=storage --value=database
 $ node osjs config:set --name=server.modules.storage.database.driver --value=sqlite
-$ node osjs build:config build:core
+$ node osjs build:config
 ```
 
 ### Mysql
@@ -43,39 +43,24 @@ $ node osjs config:set --name=server.modules.storage.database.mysql.host --value
 $ node osjs config:set --name=server.modules.storage.database.mysql.user --value=osjsuser
 $ node osjs config:set --name=server.modules.storage.database.mysql.password --value=osjspassword
 $ node osjs config:set --name=server.modules.storage.database.mysql.database --value=osjs
-$ node osjs build:config build:core
+$ node osjs build:config
+```
+
+You can also just use the database settings from the `Authentication Module`
+
+```bash
+$ node osjs config:set --name=storage --value=database
+$ node osjs config:set --name=server.modules.storage.database --value="%server.modules.auth.database%"
+$ node osjs build:config
 ```
 
 ---
 
 ## System
 
-Stores the data in the filesystem.
+Stores the data in the filesystem (by default `/home/<username>`)
 
 ```bash
 $ node osjs config:set --name=storage --value=system
-$ node osjs build:config build:core
-```
-By default, this module expects you to store the data in `/etc/osjs`, but you can modify this (see `server.modules.storage` tree for settings).
-
-### groups.json
-
-This is an example file for `groups.json`
-
-```json
-{
-  "anders": ["admin"],
-  "guest": ["api", "application", "upload", "fs"],
-  "marcello": ["api", "application", "curl", "upload", "fs"]
-}
-```
-
-### blacklist.json
-
-This is an example file for `blacklist.json`
-
-```json
-{
-  "anders": ["default/ApplicationDraw"]
-}
+$ node osjs build:config
 ```
