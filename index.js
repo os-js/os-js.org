@@ -47,13 +47,7 @@ var i = Metalsmith(__dirname)
   .use(sitemap({
     hostname: "https://www.os-js.org",
     omitIndex: true
-  }))
-  .use(function(files, metalsmith, done) {
-    setImmediate(done);
-
-    _fs.copySync(_path.join(__dirname, 'OS.js/src/installer/installer.sh'), _path.join(__dirname, 'src/installer'));
-    _fs.copySync(_path.join(__dirname, 'OS.js/src/installer/installer.ps1'), _path.join(__dirname, 'src/installer.ps1'));
-  });
+  }));
 
 if ( process.argv[2] === '--watch' ) {
   i.use(watch({

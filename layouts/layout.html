@@ -38,177 +38,58 @@
         <nav>
           <ol>
             <li>
-              <a href="/manual">Overview</a>
+              <a href="/">Overview</a>
             </li>
 
-            <li><a href="/manual/community">Community</a></li>
+            <li>
+              <a href="/community">Community</a>
+            </li>
 
             <li>
-              <a href="/manual/installation">Installation</a>
+              <a href="/installation">Installation</a>
+            </li>
+
+            <li>
+              <span>Concepts</span>
               <ul>
-                <li><a href="/manual/installation/upgrade">Upgrading</a></li>
-                <li><a href="/manual/installation/other">Other platforms</a></li>
+                <li><a href="/concept">Build system</a></li>
+                <li><a href="/concept">Configuration</a></li>
+                <li><a href="/concept">Package metadata</a></li>
               </ul>
             </li>
 
             <li>
-              <a href="/manual/development">Development</a>
+              <span>Configuration</span>
               <ul>
-                <li><a href="/manual/development/#style-guide">Style guide</a></li>
-                <li><a href="/manual/development/#set-up-environment">Set up environment</a></li>
-                <li><a href="/manual/development/#tips-and-tricks">Tips and tricks</a></li>
-                <li><a href="/manual/development/#testing">Testing</a></li>
-                <li><a href="/manual/development/#contributing">Contributing</a></li>
+                <li><a href="/configuration">Configuration</a></li>
+                <li><a href="/configuration">Webpack</a></li>
               </ul>
             </li>
 
             <li>
-              <a href="/manual/build">Build System</a>
+              <span>Modules</span>
               <ul>
-                <li><a href="/manual/build/cli">Commands</a></li>
-                <li><a href="/manual/build/grunt">Grunt</a></li>
-                <li><a href="/manual/build/customization">Customization</a></li>
-                <li><a href="/manual/build/overlay">Overlays</a></li>
+                <li><a href="/modules">Connection</a></li>
+                <li><a href="/modules">Authenticator</a></li>
+                <li><a href="/modules">Storage</a></li>
+                <li><a href="/modules">Middleware</a></li>
+                <li><a href="/modules">Transport</a></li>
+                <li><a href="/modules">API</a></li>
               </ul>
             </li>
 
             <li>
-              <a href="/manual/configuration">Configuration</a>
+              <span>Packages</span>
               <ul>
-                <li><a href="/manual/configuration/#environment">Environment</a></li>
-                <li><a href="/manual/configuration/#settings">Settings</a></li>
-                <li><a href="/manual/configuration/#assets">Assets</a></li>
-                <li><a href="/manual/configuration/#packages">Packages</a></li>
-                <li><a href="/manual/configuration/#proxies">Proxies</a></li>
+                <li><a href="/packages">Make a package</a></li>
+                <li><a href="/packages/scheme">Using Scheme</a></li>
+                <li><a href="/packages/vue">Using Vue</a></li>
+                <li><a href="/packages/react">Using React</a></li>
+                <li><a href="/packages/iframe">Using IFrame</a></li>
+                <li><a href="/packages/configuration">Configuration</a></li>
               </ul>
             </li>
 
-            <li>
-              <a href="/manual/client">Client</a>
-              <ul>
-                <li><a href="/manual/client/features">Features</a></li>
-                <li><a href="/manual/client/broadway">Broadway</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/server">Server</a>
-              <ul>
-                <li><a href="/manual/server/node">Node</a></li>
-                <li><a href="/manual/server/php">PHP</a></li>
-                <li><a href="/manual/server/middleware">Middleware</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/auth">Authentication</a>
-              <ul>
-                <li><a href="/manual/auth/modules">Modules</a></li>
-                <li><a href="/manual/auth/permission">Groups and permissions</a></li>
-                <li><a href="/manual/auth/example">Module Examples</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/storage">Storage</a>
-              <ul>
-                <li><a href="/manual/storage/modules">Modules</a></li>
-                <li><a href="/manual/storage/example">Module Examples</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/connection">Connection</a>
-              <ul>
-                <li><a href="/manual/connection/websocket">WebSocket</a></li>
-                <li><a href="/manual/connection/http">HTTP/HTTP2/HTTPS</a></li>
-                <li><a href="/manual/connection/example">Module Examples</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/api">API</a>
-              <ul>
-                <li><a href="/manual/api/client">Client</a></li>
-                <li><a href="/manual/api/server">Server</a></li>
-                <li>
-                  <span>Usage</span>
-                  <ul>
-                    <li><a href="/manual/api/usage/curl">curl</a></li>
-                    <li><a href="/manual/api/usage/vfs">VFS</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/vfs">VFS</a>
-              <ul>
-                <li><a href="/manual/vfs/#mountpoints">Mountpoints</a></li>
-                <li>
-                  <a href="/manual/vfs/transport">Transports</a>
-                  <ul>
-                    <li><a href="/manual/vfs/transport/#googledrive">Google Drive</a></li>
-                    <li><a href="/manual/vfs/transport/#microsoft-onedrive">Microsoft OneDrive</a></li>
-                    <li><a href="/manual/vfs/transport/#dropbox">Dropbox</a></li>
-                    <li><a href="/manual/vfs/transport/#webdav">WebDAV</a></li>
-                  </ul>
-                </li>
-                <li><a href="/manual/vfs/example">Module Examples</a></li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/package">Package</a>
-              <ul>
-                <li><a href="/manual/package/#metadata">Metadata</a></li>
-                <li><a href="/manual/package/#preload">Preload</a></li>
-                <li><a href="/manual/package/#scripts">Scripts</a></li>
-                <li><a href="/manual/package/#spawner">Spawner</a></li>
-                <li><a href="/manual/package/#less-support">LESS Support</a></li>
-                <li><a href="/manual/package/#server-apis">Server APIs</a></li>
-                <li>
-                  <span>Types</span>
-                  <ul>
-                    <li>
-                      <a href="/manual/package/application">Application</a>
-                      <ul>
-                        <li><a href="/manual/package/application/events">Events</a></li>
-                        <li><a href="/manual/package/application/windows">Windows</a></li>
-                        <li><a href="/manual/package/application/gui">GUI</a></li>
-                        <li><a href="/manual/package/application/responsive">Responsive</a></li>
-                        <li><a href="/manual/package/application/misc">Misc</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="/manual/package/iframe">Iframe</a></li>
-                    <li><a href="/manual/package/service">Service</a></li>
-                    <li><a href="/manual/package/extension">Extension</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/gui">Scheme and GUI</a>
-              <ul>
-                <li><a href="/manual/gui/scheme">Scheme files</a></li>
-                <li>
-                  <a href="/manual/gui/elements">GUI Elements</a>
-                  <ul>
-                    <li><a href="/manual/gui/elements/library">Element library</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="/manual/corewm">CoreWM</a>
-              <ul>
-                <li><a href="/manual/corewm/#themes">Themes</a></li>
-                <li><a href="/manual/corewm/#panel">Panel</a></li>
-                <li><a href="/manual/corewm/#widget">Widget</a></li>
-              </ul>
-            </li>
           </ol>
 
         </nav>
@@ -216,6 +97,9 @@
       </aside>
 
       <content>
+        <div>
+          <b><a href="https://manual.os-js.org/">Click here if you're looking for the OS.js v2.1 manuals!</a></b>
+        </div>
         {{{ contents }}}
 
         <footer>
