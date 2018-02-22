@@ -220,6 +220,12 @@
       };
     </script>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script>
+	//Automatically keep the copyright up to date
+	var copyright =  document.querySelector('footer').querySelector("p");
+        var copyText = copyright.innerHTML; 
+        copyright.innerHTML = copyText.replace(/\d+-\d+/,("2011-"+(new Date()).getFullYear())); 
+    </script>
 
 
   </body>
